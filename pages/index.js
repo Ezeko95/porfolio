@@ -61,10 +61,10 @@ export default function Home() {
               Join me down below and let's get cracking!
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <a href="https://www.linkedin.com/in/gianluca-cianchi" target="_blank">
+              <a href="https://www.linkedin.com/in/gianluca-cianchi" target="_blank" rel="noreferrer">
               <AiFillLinkedin/>
               </a>
-              <a href="https://github.com/Ezeko95" target="blank">
+              <a href="https://github.com/Ezeko95" target="blank" rel="noreferrer">
               <AiFillGithub />
               </a>
             </div>
