@@ -72,6 +72,7 @@ export default function Home() {
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-16 md:h-96 md:w-96 animate-jump-in">
               <Image
                 src={deved}
+                className="md: max-auto"
                 layout="fill"
                 objectFit="cover"
                 alt="profile"
@@ -159,7 +160,7 @@ export default function Home() {
               <Image src={code} width={100} height={100} alt="design" />
               <h3 className="text-lg font-medium pt-8 pb-2">Custom Coding</h3>
               <p className="py-2">
-                Let's bring your dream project to life! I specialize in
+                Let&apos;s bring your dream project to life! I specialize in
                 developing custom websites and applications tailored to your
                 specific requirements.
               </p>
@@ -211,6 +212,7 @@ export default function Home() {
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
+                alt="walletwise"
                 src={walletwise}
               />
             </div>
@@ -220,6 +222,7 @@ export default function Home() {
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
+                alt="countries"
                 src={countries}
               />
             </div>
