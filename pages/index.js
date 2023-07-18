@@ -1,9 +1,5 @@
 import Head from "next/head";
-import {
-  
-  AiFillLinkedin,
-  AiFillGithub,
-} from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { BsFillMoonStarsFill } from "react-icons/bs";
 import { useState } from "react";
 import deved from "../public/profile-picture.jpg";
@@ -11,12 +7,6 @@ import code from "../public/code.png";
 import design from "../public/design.png";
 import consulting from "../public/consulting.png";
 import Image from "next/image";
-import web1 from "../public/web1.png";
-import web2 from "../public/web2.png";
-import web3 from "../public/web3.png";
-import web4 from "../public/web4.png";
-import web5 from "../public/web5.png";
-import web6 from "../public/web6.png";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -42,9 +32,10 @@ export default function Home() {
               <li>
                 <a
                   className="bg-gradient-to-r from-cyan-500 text- to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
-                  href="#"
+                  href="../public/cv.pdf"
+                  download
                 >
-                  Resume
+                  Resume / CV
                 </a>
               </li>
             </ul>
@@ -54,22 +45,35 @@ export default function Home() {
               Gianluca Cianchi
             </h2>
             <h3 className="text-2xl py-2 dark:text-white md:text-3xl">
-              Developer and designer.
+              Full Stack Developer
             </h3>
             <p className="text-md py-5 leading-8 text-gray-800 dark:text-gray-200 max-w-xl mx-auto md:text-xl">
               Full Stack Developer providing services for programming and needs.
               Join me down below and let&apos;s get cracking!
             </p>
             <div className="text-5xl flex justify-center gap-16 py-3 text-gray-600 dark:text-gray-400">
-              <a href="https://www.linkedin.com/in/gianluca-cianchi" target="_blank" rel="noreferrer">
-              <AiFillLinkedin/>
+              <a
+                href="https://www.linkedin.com/in/gianluca-cianchi"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <AiFillLinkedin />
               </a>
-              <a href="https://github.com/Ezeko95" target="blank" rel="noreferrer">
-              <AiFillGithub />
+              <a
+                href="https://github.com/Ezeko95"
+                target="blank"
+                rel="noreferrer"
+              >
+                <AiFillGithub />
               </a>
             </div>
             <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-16 md:h-96 md:w-96">
-              <Image src={deved} layout="fill" objectFit="cover" alt="profile"/>
+              <Image
+                src={deved}
+                layout="fill"
+                objectFit="cover"
+                alt="profile"
+              />
             </div>
           </div>
         </section>
@@ -119,45 +123,66 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10  dark:bg-white flex-1">
-              <Image src={design} width={100} height={100} alt="designs"/>
-              <h3 className="text-lg font-medium pt-8 pb-2  ">
-                Beautiful Designs
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1">
+              <Image src={design} width={100} height={100} alt="designs" />
+              <h3 className="text-lg font-medium pt-8 pb-2">
+                Full Stack Web Development
               </h3>
               <p className="py-2">
-                Creating elegant designs suited for your needs following core
-                design theory.
+                I offer end-to-end web development solutions, creating elegant
+                and functional websites and applications.
               </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Gimp 2</p>
-              <p className="text-gray-800 py-1">React</p>
-              <p className="text-gray-800 py-1">Wordpress</p>
+              <h4 className="py-4 text-teal-600">
+                Tools and Technologies I Use
+              </h4>
+              <div className="flex flex-wrap">
+                <div className="w-1/2">
+                  <p className="text-gray-800 py-1">JavaScript/TypeScript</p>
+                  <p className="text-gray-800 py-1">React Native</p>
+                  <p className="text-gray-800 py-1">React</p>
+                  <p className="text-gray-800 py-1">HTML5</p>
+                  <p className="text-gray-800 py-1">Tailwind CSS</p>
+                </div>
+                <div className="w-1/2">
+                  <p className="text-gray-800 py-1">Express.js</p>
+                  <p className="text-gray-800 py-1">Node.js</p>
+                  <p className="text-gray-800 py-1">Sequelize</p>
+                  <p className="text-gray-800 py-1">PostgreSQL</p>
+                  <p className="text-gray-800 py-1">JSON Web Tokens</p>
+                  <p className="text-gray-800 py-1">Bcrypt</p>
+                </div>
+              </div>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={code} width={100} height={100} alt="design"/>
-              <h3 className="text-lg font-medium pt-8 pb-2 ">
-                Code your dream project
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1">
+              <Image src={code} width={100} height={100} alt="design" />
+              <h3 className="text-lg font-medium pt-8 pb-2">Custom Coding</h3>
+              <p className="py-2">
+                Let's bring your dream project to life! I specialize in
+                developing custom websites and applications tailored to your
+                specific requirements.
+              </p>
+              <h4 className="py-4 text-teal-600">Services I Offer</h4>
+              <p className="text-gray-800 py-1">Front-end Development</p>
+              <p className="text-gray-800 py-1">Back-end Development</p>
+              <p className="text-gray-800 py-1">Database Integration</p>
+              <p className="text-gray-800 py-1">API Development</p>
+            </div>
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1">
+              <Image src={consulting} width={100} height={100} alt="design" />
+              <h3 className="text-lg font-medium pt-8 pb-2">
+                Consulting and Advice
               </h3>
               <p className="py-2">
-                Do you have an idea for your next great website? Let&apos;s make it a
-                reality.
+                Need guidance on your current project? I offer consulting
+                services to help optimize and enhance your web development
+                projects.
               </p>
-             <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Gimp 2</p>
-              <p className="text-gray-800 py-1">React</p>
-              <p className="text-gray-800 py-1">Wordpress</p>
-            </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-white flex-1">
-              <Image src={consulting} width={100} height={100} alt="design"/>
-              <h3 className="text-lg font-medium pt-8 pb-2 ">Consulting</h3>
-              <p className="py-2">
-                Are you interested in feedback for your current project? I can
-                give you tips and tricks to level it up.
+              <h4 className="py-4 text-teal-600">Services I Offer</h4>
+              <p className="text-gray-800 py-1">Code Review and Optimization</p>
+              <p className="text-gray-800 py-1">Technical Consulting</p>
+              <p className="text-gray-800 py-1">
+                Project Planning and Strategy
               </p>
-              <h4 className="py-4 text-teal-600">Design Tools I Use</h4>
-              <p className="text-gray-800 py-1">Gimp 2</p>
-              <p className="text-gray-800 py-1">React</p>
-              <p className="text-gray-800 py-1">Wordpress</p>
             </div>
           </div>
         </section>
