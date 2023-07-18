@@ -7,6 +7,8 @@ import code from "../public/code.png";
 import design from "../public/design.png";
 import consulting from "../public/consulting.png";
 import Image from "next/image";
+import countries from "../public/Countries.png";
+import walletwise from "../public/walletwiseAdmin.jpeg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -67,7 +69,7 @@ export default function Home() {
                 <AiFillGithub />
               </a>
             </div>
-            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-16 md:h-96 md:w-96">
+            <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-16 md:h-96 md:w-96 animate-jump-in">
               <Image
                 src={deved}
                 layout="fill"
@@ -123,7 +125,7 @@ export default function Home() {
             </p>
           </div>
           <div className="lg:flex gap-10">
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1 animate-wiggle animate-once animate-duration-[8000ms] animate-ease-in animate-normal animate-fill-both">
               <Image src={design} width={100} height={100} alt="designs" />
               <h3 className="text-lg font-medium pt-8 pb-2">
                 Full Stack Web Development
@@ -153,7 +155,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1 animate-wiggle animate-once animate-duration-[8000ms] animate-ease-in animate-normal animate-fill-both">
               <Image src={code} width={100} height={100} alt="design" />
               <h3 className="text-lg font-medium pt-8 pb-2">Custom Coding</h3>
               <p className="py-2">
@@ -167,7 +169,7 @@ export default function Home() {
               <p className="text-gray-800 py-1">Database Integration</p>
               <p className="text-gray-800 py-1">API Development</p>
             </div>
-            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1">
+            <div className="text-center shadow-lg p-10 rounded-xl my-10 dark:bg-yellow-50 flex-1 animate-wiggle animate-once animate-duration-[8000ms] animate-ease-in animate-normal animate-fill-both">
               <Image src={consulting} width={100} height={100} alt="design" />
               <h3 className="text-lg font-medium pt-8 pb-2">
                 Consulting and Advice
@@ -202,14 +204,14 @@ export default function Home() {
               programming and teaching.
             </p>
           </div>
-          {/* <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
+          <div className="flex flex-col gap-10 py-10 lg:flex-row lg:flex-wrap">
             <div className="basis-1/3 flex-1 ">
               <Image
                 className="rounded-lg object-cover"
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
-                src={web1}
+                src={walletwise}
               />
             </div>
             <div className="basis-1/3 flex-1">
@@ -218,10 +220,10 @@ export default function Home() {
                 width={"100%"}
                 height={"100%"}
                 layout="responsive"
-                src={web2}
+                src={countries}
               />
             </div>
-            <div className="basis-1/3 flex-1">
+            {/* <div className="basis-1/3 flex-1">
               <Image
                 className="rounded-lg object-cover"
                 width={"100%"}
@@ -256,8 +258,8 @@ export default function Home() {
                 layout="responsive"
                 src={web6}
               />
-            </div>
-          </div> */}
+            </div> */}
+          </div>
         </section>
       </main>
     </div>
