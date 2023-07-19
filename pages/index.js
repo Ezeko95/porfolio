@@ -256,7 +256,6 @@ export default function Home() {
                 />
               </a>
             </div>
-            <h1>PI-Countries</h1>
             <div className="basis-1/3 flex-1 hover:shadow-2xl hover:shadow-black dark:hover:shadow-white transition duration-500">
               <a
                 href="https://proyecto-individual-countries-f6ys3wr88-ezeko95.vercel.app/?vercelToolbarCode=0g9cxBGljsKxEnf"
@@ -287,49 +286,70 @@ export default function Home() {
           </div>
         </section>
         <section className="flex text-center flex-col mb-10">
-          <h2 className="text-2xl mb-6 mt-6">Let&apos;s keep in touch!</h2>
+          <h2 className="text-2xl mb-6 mt-6">Let&apos;s keep in touch! 🚀</h2>
           <h4 className="mb-6">
             Send me an email down below if you enjoyed my work.
           </h4>
           <form onSubmit={handleFormSubmit}>
-            <label className="mr-52 text-gray-500">Email address: </label>
-            <br></br>
-            <input
-              type="email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              class="rounded border-gray-500"
-            />
+            <div>
+              <label className="text-sm text-gray-800">Email address:</label>
+              <br />
+              <input
+                type="email"
+                placeholder="📧"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                class="rounded border-gray-500"
+              />
+            </div>
+            <div className="mt-5">
+              <label
+                for="message"
+                class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
+              >
+                Your message
+              </label>
+              <textarea
+                id="message"
+                rows="4"
+                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                placeholder="Write your thoughts here..."
+              />
+            </div>
+            <div class="inline-block relative w-64 mt-5">
+              <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                <option>Did you enjoy my website?</option>
+                <option>Yes! 🥰</option>
+                <option>No 😕</option>
+              </select>
+              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                <svg
+                  class="fill-current h-4 w-4"
+                  xmlns="http://www.w3.org/2000/svg"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
+                </svg>
+              </div>
+            </div>
+          </form>
+          <div className="flex justify-center mt-5">
             <button
               onClick={handleFormSubmit}
-              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md "
             >
               Send!
             </button>
-          </form>
+          </div>
         </section>
       </main>
       <footer className="bg-gray-800 p-10 text-white">
         <div className="flex justify-center">
           <div>
-            <ul className="flex flex-wrap gap-4">
-              <li>
-                <a href="#about">About Me</a>
-              </li>
-              <li>
-                <a href="#services">Services</a>
-              </li>
-              <li>
-                <a href="#portfolio">Portfolio</a>
-              </li>
-              <li>
-                <a href="#contact">Contact</a>
-              </li>
-            </ul>
             <p className="text-center mt-4">
               © {new Date().getFullYear()} developedbyGC | All rights reserved.
             </p>
-            <ul className="flex mt-2">
+            <ul className="flex mt-2 justify-center">
               <a
                 href="https://nextjs.org/"
                 target="_blank"
@@ -354,7 +374,12 @@ export default function Home() {
               >
                 <FaReact />
               </a>
-              <a href="https://nodemailer.com/about/" target="_blank" rel="noreferrer" className="mr-5">
+              <a
+                href="https://nodemailer.com/about/"
+                target="_blank"
+                rel="noreferrer"
+                className="mr-5"
+              >
                 <Image src={mailer} alt="mailer" width={36} height={36} />
               </a>
             </ul>
