@@ -16,26 +16,15 @@ import soon from "../public/coming-soon.jpg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [email, setEmail] = useState({
+  const [emailData, setEmailData] = useState({
     name: "",
     lastname: "",
     email: "",
     company: "",
     phone: "",
     website: "",
-    like: false,
   });
-
-  console.log(email);
-
-  const handleChange = (e) => {
-    const { name, value, type, checked } = e.target;
-    const newValue = type === "checkbox" ? checked : value;
-    setFormData((prevFormData) => ({
-      ...prevFormData,
-      [name]: newValue,
-    }));
-  };
+  console.log(emailData);
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -47,6 +36,7 @@ export default function Home() {
         },
         body: JSON.stringify({ email }),
       });
+      console.log(response)
       if (response.ok) {
         console.log("Email sent successfully");
       } else {
@@ -132,7 +122,7 @@ export default function Home() {
           </div>
         </section>
         <section>
-          <div>
+          <div className="mt-44">
             <h3 className="text-3xl py-1 dark:text-white ">Services I offer</h3>
             <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
               As a full stack developer, I provide comprehensive web development
@@ -157,8 +147,8 @@ export default function Home() {
               </span>{" "}
               I strive to help businesses thrive in the digital realm.
             </p>
-            <h3 className="text-3xl py-1 dark:text-white ">My soft skills</h3>
-            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200">
+            <h3 className="text-3xl py-1 dark:text-white mt-20">My soft skills</h3>
+            <p className="text-md py-2 leading-8 text-gray-800 dark:text-gray-200 mb-20">
               As a full stack developer, possessing a combination of technical
               expertise and essential soft skills is key to success.{" "}
               <span className="text-teal-500"> Strong communication </span> and
@@ -322,9 +312,10 @@ export default function Home() {
                   </label>
                   <input
                     type="text"
-                    value="name"
-                    onChange={(e) => setEmail(e.target.value)}
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    placeholder="name..."
+                    value={emailData.name}
+                    onChange={(e) => setEmailData(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
                 </div>
@@ -337,8 +328,9 @@ export default function Home() {
                   </label>
                   <input
                     type="text"
-                    value="lastname"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="lastname..."
+                    value={emailData.lastname}
+                    onChange={(e) => setEmailData(e.target.value)}
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
@@ -352,8 +344,9 @@ export default function Home() {
                   </label>
                   <input
                     type="text"
-                    value="company"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="company..."
+                    value={emailData.company}
+                    onChange={(e) => setEmailData(e.target.value)}
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
@@ -367,8 +360,9 @@ export default function Home() {
                   </label>
                   <input
                     type="tel"
-                    value="phone"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="phone number..."
+                    value={emailData.phone}
+                    onChange={(e) => setEmailData(e.target.value)}
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
                     required
@@ -383,10 +377,10 @@ export default function Home() {
                   </label>
                   <input
                     type="url"
-                    value="website"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="website URL..."
+                    value={emailData.website}
+                    onChange={(e) => setEmailData(e.target.value)}
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
                   />
                 </div>
                 <div class="w-96 justify-center">
@@ -398,8 +392,9 @@ export default function Home() {
                   </label>
                   <input
                     type="email"
-                    value="email"
-                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="email..."
+                    value={emailData.email}
+                    onChange={(e) => setEmailData(e.target.value)}
                     class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
@@ -411,7 +406,6 @@ export default function Home() {
                   <input
                     id="remember"
                     type="checkbox"
-                    value=""
                     class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
                     required
                   />

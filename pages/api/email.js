@@ -14,13 +14,13 @@ export default function handler(req, res) {
   console.log("arrived puto")
   if (req.method === "POST") {
     bodyParser.urlencoded({ extended: true })(req, res, () => {
-      const { email } = req.body;
+      const { emailData } = req.body;
       // Email content
       const mailOptions = {
         from: process.env.EMAIL_ADDRESS, 
         to: "ciangianluca@hotmail.com", 
         subject: "Portfolio Subscriber!",
-        text: `New email subscriber: ${email}`,
+        text: `New email subscriber: ${emailData.email}`,
       };
 
       transporter.sendMail(mailOptions, (error, info) => {
