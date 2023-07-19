@@ -16,11 +16,29 @@ import soon from "../public/coming-soon.jpg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState({
+    name: "",
+    lastname: "",
+    email: "",
+    company: "",
+    phone: "",
+    website: "",
+    like: false,
+  });
+
+  console.log(email);
+
+  const handleChange = (e) => {
+    const { name, value, type, checked } = e.target;
+    const newValue = type === "checkbox" ? checked : value;
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      [name]: newValue,
+    }));
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
-
     try {
       const response = await fetch("/api/email", {
         method: "POST",
@@ -197,7 +215,7 @@ export default function Home() {
                 developing custom websites and applications tailored to your
                 specific requirements.
               </p>
-              <h4 className="py-4 text-teal-600">Services I Offer</h4>
+              <h4 className="py-4 text-teal-600">What Do I Do?</h4>
               <p className="text-gray-800 py-1">Front-end Development</p>
               <p className="text-gray-800 py-1">Back-end Development</p>
               <p className="text-gray-800 py-1">Database Integration</p>
@@ -213,7 +231,7 @@ export default function Home() {
                 services to help optimize and enhance your web development
                 projects.
               </p>
-              <h4 className="py-4 text-teal-600">Services I Offer</h4>
+              <h4 className="py-4 text-teal-600">Extras</h4>
               <p className="text-gray-800 py-1">Code Review and Optimization</p>
               <p className="text-gray-800 py-1">Technical Consulting</p>
               <p className="text-gray-800 py-1">
@@ -286,57 +304,146 @@ export default function Home() {
           </div>
         </section>
         <section className="flex text-center flex-col mb-10">
-          <h2 className="text-2xl mb-6 mt-6">Let&apos;s keep in touch! 🚀</h2>
-          <h4 className="mb-6">
+          <h2 className="text-2xl mb-6 mt-6 dark:text-white">
+            Let&apos;s keep in touch! 🚀
+          </h2>
+          <h4 className="mb-6 dark:text-white">
             Send me an email down below if you enjoyed my work.
           </h4>
-          <form onSubmit={handleFormSubmit}>
-            <div>
-              <label className="text-sm text-gray-800">Email address:</label>
-              <br />
-              <input
-                type="email"
-                placeholder="📧"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                class="rounded border-gray-500"
-              />
-            </div>
-            <div className="mt-5">
-              <label
-                for="message"
-                class="block mb-2 text-sm font-medium text-gray-800 dark:text-white"
-              >
-                Your message
-              </label>
-              <textarea
-                id="message"
-                rows="4"
-                class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                placeholder="Write your thoughts here..."
-              />
-            </div>
-            <div class="inline-block relative w-64 mt-5">
-              <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                <option>Did you enjoy my website?</option>
-                <option>Yes! 🥰</option>
-                <option>No 😕</option>
-              </select>
-              <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
-                <svg
-                  class="fill-current h-4 w-4"
-                  xmlns="http://www.w3.org/2000/svg"
-                  viewBox="0 0 20 20"
-                >
-                  <path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
-                </svg>
+          <div className="flex justify-center">
+            <form>
+              <div class="grid gap-6 mb-6 md:grid-cols-2">
+                <div className="w-96">
+                  <label
+                    for="first_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    First name
+                  </label>
+                  <input
+                    type="text"
+                    value="name"
+                    onChange={(e) => setEmail(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div className="w-96">
+                  <label
+                    for="last_name"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Last name
+                  </label>
+                  <input
+                    type="text"
+                    value="lastname"
+                    onChange={(e) => setEmail(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div className="w-96">
+                  <label
+                    for="company"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Company
+                  </label>
+                  <input
+                    type="text"
+                    value="company"
+                    onChange={(e) => setEmail(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div className="w-96">
+                  <label
+                    for="phone"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Phone number
+                  </label>
+                  <input
+                    type="tel"
+                    value="phone"
+                    onChange={(e) => setEmail(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    required
+                  />
+                </div>
+                <div className="w-96">
+                  <label
+                    for="website"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Website URL
+                  </label>
+                  <input
+                    type="url"
+                    value="website"
+                    onChange={(e) => setEmail(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
+                <div class="w-96 justify-center">
+                  <label
+                    for="email"
+                    class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+                  >
+                    Email address
+                  </label>
+                  <input
+                    type="email"
+                    value="email"
+                    onChange={(e) => setEmail(e.target.value)}
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                    required
+                  />
+                </div>
               </div>
-            </div>
-          </form>
-          <div className="flex justify-center mt-5">
+
+              <div class="flex items-start mb-6">
+                <div class="flex items-center h-5">
+                  <input
+                    id="remember"
+                    type="checkbox"
+                    value=""
+                    class="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
+                    required
+                  />
+                </div>
+                <label
+                  for="remember"
+                  class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+                >
+                  I agree with the{" "}
+                  <a
+                    href="#"
+                    class="text-blue-600 hover:underline dark:text-blue-500"
+                  >
+                    terms and conditions
+                  </a>
+                  .
+                </label>
+              </div>
+            </form>
+          </div>
+
+          <div class="ml-96 w-72 mt-5 ">
+            <select class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+              <option>Did you enjoy my website? </option>
+              <option>Yes! 🥰</option>
+              <option>No 😕</option>
+            </select>
+          </div>
+          <div className="flex justify-center mt-5 mb-5">
             <button
               onClick={handleFormSubmit}
-              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md "
+              className="transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md "
             >
               Send!
             </button>
@@ -354,7 +461,7 @@ export default function Home() {
                 href="https://nextjs.org/"
                 target="_blank"
                 rel="noreferrer"
-                className="mr-5 text-4xl"
+                className="mr-5 text-4xl transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110"
               >
                 <SiNextdotjs />
               </a>
@@ -362,7 +469,7 @@ export default function Home() {
                 href="https://tailwindcss.com/"
                 target="_blank"
                 rel="noreferrer"
-                className="mr-5 text-4xl"
+                className="mr-5 text-4xl transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110"
               >
                 <SiTailwindcss />
               </a>
@@ -370,7 +477,7 @@ export default function Home() {
                 href="https://es.react.dev/"
                 target="_blank"
                 rel="noreferrer"
-                className="mr-5 text-4xl"
+                className="mr-5 text-4xl transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110"
               >
                 <FaReact />
               </a>
@@ -378,7 +485,7 @@ export default function Home() {
                 href="https://nodemailer.com/about/"
                 target="_blank"
                 rel="noreferrer"
-                className="mr-5"
+                className="mr-5 transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110"
               >
                 <Image src={mailer} alt="mailer" width={36} height={36} />
               </a>
