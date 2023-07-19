@@ -1,6 +1,8 @@
 import Head from "next/head";
 import { AiFillLinkedin, AiFillGithub } from "react-icons/ai";
 import { BsFillMoonStarsFill, BsFillSunFill } from "react-icons/bs";
+import { SiNextdotjs, SiTailwindcss } from "react-icons/si";
+import { FaReact } from "react-icons/fa";
 import { useState } from "react";
 import deved from "../public/profile-picture.jpg";
 import code from "../public/code.png";
@@ -9,10 +11,33 @@ import consulting from "../public/consulting.png";
 import Image from "next/image";
 import countries from "../public/Countries.png";
 import walletwise from "../public/walletwiseAdmin.jpeg";
+import mailer from "../public/nodemailer.png";
 import soon from "../public/coming-soon.jpg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [email, setEmail] = useState("");
+
+  const handleFormSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await fetch("/api/email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ email }),
+      });
+      if (response.ok) {
+        console.log("Email sent successfully");
+      } else {
+        console.log("Failed to send email CLIENT");
+      }
+    } catch (error) {
+      console.log("Error:", error);
+    }
+  };
 
   return (
     <div className={darkMode ? "dark" : ""} width>
@@ -252,25 +277,90 @@ export default function Home() {
             <div className="basis-1/3 flex-1 hover:shadow-2xl hover:shadow-black dark:hover:shadow-white">
               <Image
                 className="rounded-lg object-contain"
-                width={"30%"}
-                height={"30%"}
                 layout="responsive"
+                width={"50%"}
+                height={"50%"}
                 alt="soon"
                 src={soon}
               />
             </div>
           </div>
         </section>
-        <section>
-          <h2 className="text-2xl">Let&apos;s keep in touch!</h2>
-          <h4>Send me an email down below if you enjoyed my work.</h4>
-          <form>
-            <label>Email: </label>
-            <input type="text" class="rounded text-pink-500"/>
-            <label></label>
+        <section className="flex text-center flex-col mb-10">
+          <h2 className="text-2xl mb-6 mt-6">Let&apos;s keep in touch!</h2>
+          <h4 className="mb-6">
+            Send me an email down below if you enjoyed my work.
+          </h4>
+          <form onSubmit={handleFormSubmit}>
+            <label className="mr-52 text-gray-500">Email address: </label>
+            <br></br>
+            <input
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              class="rounded border-gray-500"
+            />
+            <button
+              onClick={handleFormSubmit}
+              className="transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
+            >
+              Send!
+            </button>
           </form>
         </section>
       </main>
+      <footer className="bg-gray-800 p-10 text-white">
+        <div className="flex justify-center">
+          <div>
+            <ul className="flex flex-wrap gap-4">
+              <li>
+                <a href="#about">About Me</a>
+              </li>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+            <p className="text-center mt-4">
+              © {new Date().getFullYear()} developedbyGC | All rights reserved.
+            </p>
+            <ul className="flex mt-2">
+              <a
+                href="https://nextjs.org/"
+                target="_blank"
+                rel="noreferrer"
+                className="mr-5 text-4xl"
+              >
+                <SiNextdotjs />
+              </a>
+              <a
+                href="https://tailwindcss.com/"
+                target="_blank"
+                rel="noreferrer"
+                className="mr-5 text-4xl"
+              >
+                <SiTailwindcss />
+              </a>
+              <a
+                href="https://es.react.dev/"
+                target="_blank"
+                rel="noreferrer"
+                className="mr-5 text-4xl"
+              >
+                <FaReact />
+              </a>
+              <a href="https://nodemailer.com/about/" target="_blank" rel="noreferrer" className="mr-5">
+                <Image src={mailer} alt="mailer" width={36} height={36} />
+              </a>
+            </ul>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 }
