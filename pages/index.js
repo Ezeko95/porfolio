@@ -12,16 +12,17 @@ import Image from "next/image";
 import countries from "../public/Countries.png";
 import walletwise from "../public/walletwiseAdmin.jpeg";
 import mailer from "../public/nodemailer.png";
-import soon from "../public/coming-soon.jpg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
+  const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+  const [showWarningAlert, setShowWarningAlert] = useState(false);
   const [form, setForm] = useState({
     name: "",
     email: "",
     company: "",
     website: "",
-    happy: ""
+    happy: "",
   });
 
   const changeHandler = (e) => {
@@ -32,6 +33,17 @@ export default function Home() {
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
+    if (
+      form.name.trim() === "" ||
+      form.email.trim() === "" ||
+      form.company.trim() === "" ||
+      form.website.trim() === ""
+    ) {
+      console.log("Please fill in all fields");
+      setShowWarningAlert(true);
+      setTimeout(() => setShowWarningAlert(false), 5000);
+      return;
+    }
     try {
       const response = await fetch("/api/email", {
         method: "POST",
@@ -42,8 +54,10 @@ export default function Home() {
       });
       if (response.ok) {
         console.log("Email sent successfully");
+        setShowSuccessAlert(true);
+        setTimeout(() => setShowSuccessAlert(false), 5000);
       } else {
-        console.log("Failed to send email CLIENT");
+        console.log("Failed to send email");
       }
     } catch (error) {
       console.log("Error:", error);
@@ -322,7 +336,7 @@ export default function Home() {
                     required
                   />
                 </div>
-                
+
                 <div className="w-96">
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Company
@@ -338,7 +352,7 @@ export default function Home() {
                     required
                   />
                 </div>
-                
+
                 <div className="w-96">
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Website URL
@@ -368,22 +382,69 @@ export default function Home() {
                     required
                   />
                 </div>
-              <div className="flex justify-center mb-6">
-                <select id="happy" name="happy" onChange={changeHandler} className="appearance-none w-fit bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-                  <option value="">Did you enjoy my website? </option>
-                  <option value="yes!">Yes! 🥰</option>
-                  <option value="no!">No 😕</option>
-                </select>
+                <div className="flex justify-center mb-6">
+                  <select
+                    id="happy"
+                    name="happy"
+                    onChange={changeHandler}
+                    className="appearance-none w-fit bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline"
+                  >
+                    <option value="">Did you enjoy my website? </option>
+                    <option value="yes!">Yes! 🥰</option>
+                    <option value="no!">No 😕</option>
+                  </select>
+                </div>
               </div>
-              </div>
-
             </form>
           </div>
-
+          <div className="flex justify-center">
+            {showWarningAlert && (
+              <div
+                className="flex max-w-fit items-center p-4 mb-4 text-sm text-yellow-800 border border-yellow-300 rounded-lg bg-yellow-50 dark:bg-gray-800 dark:text-yellow-300 dark:border-yellow-800"
+                role="alert"
+              >
+                <svg
+                  className="flex-shrink-0 inline w-4 h-4 mr-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="sr-only">Info</span>
+                <div>
+                  <span className="font-medium">Warning!</span> Check all
+                  fields! 😟
+                </div>
+              </div>
+            )}
+            {showSuccessAlert && (
+              <div
+                className="flex max-w-fit items-center p-4 mb-4 text-sm text-green-800 border border-green-300 rounded-lg bg-green-50 dark:bg-gray-800 dark:text-green-400 dark:border-green-800"
+                role="alert"
+              >
+                <svg
+                  className="flex-shrink-0 inline w-4 h-4 mr-3"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M10 .5a9.5 9.5 0 1 0 9.5 9.5A9.51 9.51 0 0 0 10 .5ZM9.5 4a1.5 1.5 0 1 1 0 3 1.5 1.5 0 0 1 0-3ZM12 15H8a1 1 0 0 1 0-2h1v-3H8a1 1 0 0 1 0-2h2a1 1 0 0 1 1 1v4h1a1 1 0 0 1 0 2Z" />
+                </svg>
+                <span className="sr-only">Info</span>
+                <div>
+                  <span className="font-medium">Success!</span> Email has been
+                  sent successfully. Thank you! 🤗
+                </div>
+              </div>
+            )}
+          </div>
           <div className="flex justify-center mt-5 pb-5">
             <button
               onClick={handleFormSubmit}
-              className="transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md "
+              className="transition ease-in-out  delay-150 hover:-translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-8 py-4 border-none rounded-md "
             >
               Send!
             </button>
