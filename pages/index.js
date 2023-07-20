@@ -182,11 +182,12 @@ export default function Home() {
               </h4>
               <div className="flex flex-wrap">
                 <div className="w-1/2">
-                  <p className="text-gray-800 py-1">JavaScript/TypeScript</p>
+                  <p className="text-gray-800 py-1">JavaScript</p>
                   <p className="text-gray-800 py-1">React Native</p>
                   <p className="text-gray-800 py-1">React</p>
                   <p className="text-gray-800 py-1">HTML5</p>
                   <p className="text-gray-800 py-1">Tailwind CSS</p>
+                  <p className="text-gray-800 py-1">TypeScript</p>
                 </div>
                 <div className="w-1/2">
                   <p className="text-gray-800 py-1">Express.js</p>
