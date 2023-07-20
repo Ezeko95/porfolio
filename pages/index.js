@@ -16,15 +16,19 @@ import soon from "../public/coming-soon.jpg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
-  const [emailData, setEmailData] = useState({
+  const [form, setForm] = useState({
     name: "",
-    lastname: "",
     email: "",
     company: "",
-    phone: "",
     website: "",
+    happy: ""
   });
-  console.log(emailData);
+
+  const changeHandler = (e) => {
+    const property = e.target.name;
+    const value = e.target.value;
+    setForm({ ...form, [property]: value });
+  };
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -34,9 +38,8 @@ export default function Home() {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({ form }),
       });
-      console.log(response);
       if (response.ok) {
         console.log("Email sent successfully");
       } else {
@@ -310,62 +313,43 @@ export default function Home() {
                   </label>
                   <input
                     type="text"
+                    id="name"
                     placeholder="name..."
-                    value={emailData.name}
-                    onChange={(e) => setEmailData(e.target.value)}
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-200 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required
-                  />
-                </div>
-                <div className="w-96">
-                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                    Last name
-                  </label>
-                  <input
-                    type="text"
-                    placeholder="lastname..."
-                    value={emailData.lastname}
-                    onChange={(e) => setEmailData(e.target.value)}
+                    name="name"
+                    value={form.name}
+                    onChange={changeHandler}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
                 </div>
+                
                 <div className="w-96">
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Company
                   </label>
                   <input
                     type="text"
+                    id="company"
                     placeholder="company..."
-                    value={emailData.company}
-                    onChange={(e) => setEmailData(e.target.value)}
+                    name="company"
+                    value={form.company}
+                    onChange={changeHandler}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
                 </div>
-                <div className="w-96">
-                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
-                    Phone number
-                  </label>
-                  <input
-                    type="tel"
-                    placeholder="phone number..."
-                    value={emailData.phone}
-                    onChange={(e) => setEmailData(e.target.value)}
-                    className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
-                    required
-                  />
-                </div>
+                
                 <div className="w-96">
                   <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
                     Website URL
                   </label>
                   <input
                     type="url"
+                    id="website"
                     placeholder="website URL..."
-                    value={emailData.website}
-                    onChange={(e) => setEmailData(e.target.value)}
+                    name="website"
+                    value={form.website}
+                    onChange={changeHandler}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                   />
                 </div>
@@ -375,45 +359,27 @@ export default function Home() {
                   </label>
                   <input
                     type="email"
+                    id="email"
                     placeholder="email..."
-                    value={emailData.email}
-                    onChange={(e) => setEmailData(e.target.value)}
+                    name="email"
+                    value={form.email}
+                    onChange={changeHandler}
                     className="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                     required
                   />
                 </div>
+              <div className="flex justify-center mb-6">
+                <select id="happy" name="happy" onChange={changeHandler} className="appearance-none w-fit bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
+                  <option value="">Did you enjoy my website? </option>
+                  <option value="yes!">Yes! 🥰</option>
+                  <option value="no!">No 😕</option>
+                </select>
+              </div>
               </div>
 
-              <div className="flex items-start mb-6">
-                <div className="flex items-center h-5">
-                  <input
-                    id="remember"
-                    type="checkbox"
-                    className="w-4 h-4 border border-gray-300 rounded bg-gray-50 focus:ring-3 focus:ring-blue-300 dark:bg-gray-700 dark:border-gray-600 dark:focus:ring-blue-600 dark:ring-offset-gray-800"
-                    required
-                  />
-                </div>
-                <label className="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300">
-                  I agree with the{" "}
-                  <a
-                    href="#"
-                    className="text-blue-600 hover:underline dark:text-blue-500"
-                  >
-                    terms and conditions
-                  </a>
-                  .
-                </label>
-              </div>
             </form>
           </div>
 
-          <div className="ml-96 w-72 mt-5 sm:flex justify-center">
-            <select className="lg:block appearance-none w-full sm:flex bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
-              <option>Did you enjoy my website? </option>
-              <option>Yes! 🥰</option>
-              <option>No 😕</option>
-            </select>
-          </div>
           <div className="flex justify-center mt-5 pb-5">
             <button
               onClick={handleFormSubmit}
