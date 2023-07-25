@@ -12,6 +12,7 @@ import Image from "next/image";
 import countries from "../public/Countries.png";
 import walletwise from "../public/walletwiseAdmin.jpeg";
 import mailer from "../public/nodemailer.png";
+import soon from "../public/comin-soon.jpg";
 
 export default function Home() {
   const [darkMode, setDarkMode] = useState(false);
@@ -275,8 +276,8 @@ export default function Home() {
               >
                 <Image
                   className="rounded-lg object-cover"
-                  width={"50%"}
-                  height={"50%"}
+                  width={"30%"}
+                  height={"30%"}
                   layout="responsive"
                   alt="walletwise"
                   src={walletwise}
@@ -292,23 +293,36 @@ export default function Home() {
               >
                 <Image
                   className="rounded-lg object-cover"
-                  width={"50%"}
-                  height={"50%"}
+                  width={"30%"}
+                  height={"30%"}
                   layout="responsive"
                   alt="countries"
                   src={countries}
                 />
               </a>
             </div>
-            {/* <div className="basis-1/3 flex-1 hover:shadow-2xl hover:shadow-black dark:hover:shadow-white ">
+            <div className="basis-1/3 flex-1 hover:shadow-2xl hover:shadow-black dark:hover:shadow-white transition duration-500 ">
               <Image
-                className="rounded-lg object-contain"
+                className="rounded-lg overflow-hidden"
+                width={"30%"}
+                  height={"30%"}
                 layout="responsive"
                 alt="soon"
                 src={soon}
                 priority={true}
               />
-            </div> */}
+            </div>
+            <div className="basis-1/3 flex-1 hover:shadow-2xl hover:shadow-black dark:hover:shadow-white transition duration-500 ">
+              <Image
+                className="rounded-lg overflow-hidden "
+                width={"30%"}
+                height={"30%"}
+                layout="responsive"
+                alt="soon"
+                src={soon}
+                priority={true}
+              />
+            </div>
           </div>
         </section>
         <section className="flex text-center flex-col pb-10">
@@ -354,7 +368,7 @@ export default function Home() {
                 </div>
 
                 <div className="w-96">
-                  <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">
+                  <label className="block mb-2 text-sm  font-medium text-gray-900 dark:text-white">
                     Website URL
                   </label>
                   <input
@@ -457,6 +471,7 @@ export default function Home() {
             <p className="text-center pt-2">
               © {new Date().getFullYear()} developedbyGC | All rights reserved.
             </p>
+            <p className="flex justify-center pt-4">Made using</p>
             <ul className="flex mt-2 justify-center">
               <a
                 href="https://nextjs.org/"
