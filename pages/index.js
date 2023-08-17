@@ -95,6 +95,7 @@ export default function Home() {
                   className="transition-transform ease-in-out delay-150 hover:translate-y-1 hover:scale-110 hover:bg-cyan-700 duration-300 bg-gradient-to-r from-cyan-800 to-teal-500 text-white px-4 py-2 border-none rounded-md ml-8"
                   href="https://docs.google.com/document/d/1bHOH9tbNuGDls3h2BWuzuOWx6CHP5_IlqxqYRD4Nz60/edit?usp=sharing"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   Resume / CV
                 </a>
