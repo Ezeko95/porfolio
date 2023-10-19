@@ -11,6 +11,7 @@ import consulting from "../public/consulting.png";
 import Image from "next/image";
 import countries from "../public/Countries.png";
 import walletwise from "../public/walletwiseAdmin.jpeg";
+import dm from "../public/dm.png";
 import mailer from "../public/nodemailer.png";
 import soon from "../public/comin-soon.jpg";
 
@@ -200,20 +201,20 @@ export default function Home() {
               </h4>
               <div className="flex flex-wrap">
                 <div className="w-1/2">
-                  <p className="text-gray-800 py-1">JavaScript</p>
+                  <p className="text-gray-800 py-1">Typescript</p>
                   <p className="text-gray-800 py-1">React Native</p>
                   <p className="text-gray-800 py-1">React</p>
                   <p className="text-gray-800 py-1">HTML5</p>
-                  <p className="text-gray-800 py-1">Tailwind CSS</p>
-                  <p className="text-gray-800 py-1">TypeScript</p>
+                  <p className="text-gray-800 py-1">CSS</p>
+                  <p className="text-gray-800 py-1">Python</p>
                 </div>
                 <div className="w-1/2">
                   <p className="text-gray-800 py-1">Express.js</p>
                   <p className="text-gray-800 py-1">Node.js</p>
-                  <p className="text-gray-800 py-1">Sequelize</p>
+                  <p className="text-gray-800 py-1">FastAPI</p>
                   <p className="text-gray-800 py-1">PostgreSQL</p>
-                  <p className="text-gray-800 py-1">JSON Web Tokens</p>
-                  <p className="text-gray-800 py-1">Bcrypt</p>
+                  <p className="text-gray-800 py-1">Django</p>
+                  <p className="text-gray-800 py-1">MongoDB</p>
                 </div>
               </div>
             </div>
@@ -307,8 +308,8 @@ export default function Home() {
                 width={"30%"}
                 height={"30%"}
                 layout="responsive"
-                alt="soon"
-                src={soon}
+                alt="dm"
+                src={dm}
                 priority={true}
               />
             </div>
