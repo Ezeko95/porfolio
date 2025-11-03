@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { Moon, Sun, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
-import { useEffect, useState } from "react";
+import { useEffect, useState, startTransition } from "react";
 import { Button } from "@/components/ui/button";
 import { Nav } from "@/components/nav";
 import { useI18n } from "@/lib/i18n-context";
@@ -14,7 +14,9 @@ export function Header() {
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
-    setMounted(true);
+    startTransition(() => {
+      setMounted(true);
+    });
   }, []);
 
   const toggleLanguage = () => {

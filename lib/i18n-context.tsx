@@ -5,6 +5,7 @@ import {
   useContext,
   useState,
   useEffect,
+  startTransition,
   ReactNode,
 } from "react";
 import { Locale, translations, defaultLocale } from "./i18n";
@@ -12,7 +13,7 @@ import { Locale, translations, defaultLocale } from "./i18n";
 interface I18nContextType {
   locale: Locale;
   setLocale: (locale: Locale) => void;
-  t: typeof translations.es;
+  t: typeof translations.es | typeof translations.en;
 }
 
 const I18nContext = createContext<I18nContextType | undefined>(undefined);
@@ -23,7 +24,9 @@ export function I18nProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     const stored = localStorage.getItem("locale") as Locale;
     if (stored && (stored === "es" || stored === "en")) {
-      setLocaleState(stored);
+      startTransition(() => {
+        setLocaleState(stored);
+      });
     }
   }, []);
 
