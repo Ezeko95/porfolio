@@ -24,13 +24,13 @@ export function HomeClient() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button aschild="true" size="lg" className="group ">
+          <Button size="lg" className="group ">
             <Link href="/projects" className="flex items-center justify-center">
               {t.home.hero.ctaProjects}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <Button aschild="true" variant="outline" size="lg">
+          <Button variant="outline" size="lg">
             <Link href="/contact">{t.home.hero.ctaContact}</Link>
           </Button>
         </div>

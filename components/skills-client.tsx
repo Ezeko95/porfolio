@@ -2,14 +2,10 @@
 
 import { useI18n } from "@/lib/i18n-context";
 import {
-  Code,
   Database,
-  Globe,
-  GitBranch,
   Terminal,
   Layout,
   Server,
-  Cpu,
 } from "lucide-react";
 
 const skillCategories = [
