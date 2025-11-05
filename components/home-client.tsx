@@ -4,14 +4,17 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Zap } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
-// import { ProjectsCarousel } from "@/components/projects-carousel";
-
+import Image from "next/image";
 export function HomeClient() {
   const { t } = useI18n();
 
   return (
-    <div className="container mx-auto py-12 md:py-24 lg:py-32">
+    <div className="container mx-auto py-12 md:py-24 lg:pb-32">
       <section className="flex flex-col items-center text-center space-y-8 animate-fade-in">
+        <div>
+        <Image src="/gianluca-avatar.png" alt="Gianluca Cianchi avatar" width={300} height={300} />
+
+        </div>
         <div className="space-y-4 max-w-3xl">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             {t.home.hero.title}
@@ -72,9 +75,7 @@ export function HomeClient() {
           </p>
         </div>
       </section>
-      {/* <section >
-        <ProjectsCarousel />
-      </section> */}
+
     </div>
   );
 }
