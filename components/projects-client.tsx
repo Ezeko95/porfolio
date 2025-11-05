@@ -64,7 +64,7 @@ export function ProjectsClient() {
                 <Button
                   variant="outline"
                   size="sm"
-                  className="flex-1 hover:bg-secondary/80 p-6 hover:shadow-lg">
+                  className="flex-1 hover:bg-secondary/80 p-6 hover:shadow-lg cursor-pointer">
                   <a
                     href={project.projectUrl}
                     target="_blank"

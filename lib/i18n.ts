@@ -20,6 +20,10 @@ export const translations = {
         ctaProjects: "Ver Proyectos",
         ctaContact: "Contactarme",
       },
+      highlightedProjects: {
+        title: "Mis proyectos",
+        viewAll: "Ver todos los proyectos",
+      },
       values: {
         cleanCode: {
           title: "Código Limpio",
@@ -99,6 +103,10 @@ export const translations = {
           "Specialized in JavaScript, TypeScript, Next.js, and Python/Django. Focused on creating exceptional user experiences and maintainable code.",
         ctaProjects: "View Projects",
         ctaContact: "Contact Me",
+      },
+      highlightedProjects: {
+        title: "My Projects",
+        viewAll: "View all projects",
       },
       values: {
         cleanCode: {

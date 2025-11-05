@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Zap } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+// import { ProjectsCarousel } from "@/components/projects-carousel";
 
 export function HomeClient() {
   const { t } = useI18n();
@@ -71,6 +72,9 @@ export function HomeClient() {
           </p>
         </div>
       </section>
+      {/* <section >
+        <ProjectsCarousel />
+      </section> */}
     </div>
   );
 }

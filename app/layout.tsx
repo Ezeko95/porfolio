@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
-import "./globals.css"
+import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/lib/i18n-context";
 import { Header } from "@/components/header";
@@ -34,7 +34,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://yourdomain.com",
+    url: "https://porfolio-lovat-psi.vercel.app/",
     title: "Portfolio - Desarrollador Full-Stack",
     description:
       "Desarrollador Full-Stack especializado en JavaScript, TypeScript, Next.js y Python/Django.",
@@ -64,7 +64,7 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
-        <link rel="canonical" href="https://yourdomain.com" />
+        <link rel="canonical" href="https://porfolio-lovat-psi.vercel.app/" />
       </head>
       <body className={inter.variable}>
         <JsonLd />

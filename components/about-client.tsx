@@ -1,8 +1,8 @@
-'use client';
+"use client";
 
-import { useI18n } from '@/lib/i18n-context';
-import Image from 'next/image';
-import { Code2, Target, Zap } from 'lucide-react';
+import { useI18n } from "@/lib/i18n-context";
+import Image from "next/image";
+import { Code2, Target, Zap } from "lucide-react";
 
 export function AboutClient() {
   const { t } = useI18n();
@@ -22,10 +22,11 @@ export function AboutClient() {
         <div className="grid gap-12 md:grid-cols-2 items-center">
           <div className="relative w-full h-[400px] rounded-lg overflow-hidden">
             <Image
-              src="https://picsum.photos/600/600?random=profile"
-              alt="Foto de perfil"
-              fill
-              className="object-cover"
+              src="/gianluca-portrait.png"
+              alt="Retrato de Gianluca Cianchi"
+              className="object-center"
+              width={600}
+              height={600}
             />
           </div>
 
@@ -38,7 +39,9 @@ export function AboutClient() {
             </div>
 
             <div className="space-y-4">
-              <h3 className="text-xl font-semibold">{t.about.philosophy.title}</h3>
+              <h3 className="text-xl font-semibold">
+                {t.about.philosophy.title}
+              </h3>
               <p className="text-muted-foreground leading-relaxed">
                 {t.about.philosophy.text}
               </p>
@@ -55,7 +58,8 @@ export function AboutClient() {
             </div>
             <h3 className="font-semibold text-lg">Código Limpio</h3>
             <p className="text-sm text-muted-foreground">
-              Priorizo la legibilidad, mantenibilidad y escalabilidad en cada línea de código.
+              Priorizo la legibilidad, mantenibilidad y escalabilidad en cada
+              línea de código.
             </p>
           </div>
 
@@ -67,7 +71,8 @@ export function AboutClient() {
             </div>
             <h3 className="font-semibold text-lg">Enfocado en Resultados</h3>
             <p className="text-sm text-muted-foreground">
-              Cada proyecto debe resolver problemas reales y agregar valor tangible.
+              Cada proyecto debe resolver problemas reales y agregar valor
+              tangible.
             </p>
           </div>
 
@@ -79,7 +84,8 @@ export function AboutClient() {
             </div>
             <h3 className="font-semibold text-lg">Optimización</h3>
             <p className="text-sm text-muted-foreground">
-              Rendimiento y velocidad son esenciales para una excelente experiencia de usuario.
+              Rendimiento y velocidad son esenciales para una excelente
+              experiencia de usuario.
             </p>
           </div>
         </div>

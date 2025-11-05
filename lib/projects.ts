@@ -5,7 +5,7 @@ export const projects = [
     description:
       "Plataforma de comercio electrónico completa con sistema de pagos, gestión de inventario y panel de administración.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "Mercado Pago"],
-    image: "https://picsum.photos/400/300?random=1",
+    image: "/house-and-garden.png",
     projectUrl: "https://houseandgarden.com.ar/",
     codeUrl: null as string | null,
   },
@@ -15,7 +15,7 @@ export const projects = [
     description:
       "Sistema de gestión empresarial con autenticación, dashboard analítico y API REST completa.",
     tech: ["React", "Django", "PostgreSQL", "TailwindCSS"],
-    image: "https://picsum.photos/400/300?random=2",
+    image: "/perfect-transfer.png",
     projectUrl: "https://www.perfect-transfer.com.ar",
     codeUrl: null as string | null,
   },
@@ -25,7 +25,7 @@ export const projects = [
     description:
       "Sistema de eLearning con autenticación, gestión de usuarios y contenido para empresa española.",
     tech: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS"],
-    image: "https://picsum.photos/400/300?random=3",
+    image: "/digital-market.png",
     projectUrl: "https://dm-plataforma.vercel.app/",
     codeUrl: null as string | null,
   },
@@ -35,7 +35,7 @@ export const projects = [
     description:
       "Pagina web para barberia profesional con sistema de reservas online.",
     tech: ["React", "TypeScript", "Chart.js", "Node.js"],
-    image: "https://picsum.photos/400/300?random=4",
+    image: "/barberia-barcelo.png",
     projectUrl: "https://barberia-barcelo.vercel.app/",
     codeUrl: null as string | null,
   },
@@ -45,7 +45,7 @@ export const projects = [
     description:
       "Trabajo final para Bootcamp de Full Stack Developer en SoyHenry.",
     tech: ["Next.js", "TypeScript", "TailwindCSS", "API REST"],
-    image: "https://picsum.photos/400/300?random=5",
+    image: "/trabajo-practico.png",
     projectUrl: "https://proyecto-individual-countries-ruddy.vercel.app/",
     codeUrl: null as string | null,
   },
