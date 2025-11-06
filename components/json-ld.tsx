@@ -6,8 +6,12 @@ export function JsonLd() {
     jobTitle: "Desarrollador Full-Stack",
     description:
       "Desarrollador Full-Stack especializado en JavaScript, TypeScript, Next.js y Python/Django.",
-    url: "https://porfolio-lovat-psi.vercel.app/",
-    sameAs: ["https://github.com", "https://linkedin.com"],
+    url: "https://gianluca-cianchi.com.ar/",
+    sameAs: [
+      "https://github.com/Ezeko95",
+      "https://www.linkedin.com/in/gianluca-cianchi/",
+      "mailto:ciangianluca@hotmail.com",
+    ],
     knowsAbout: [
       "JavaScript",
       "TypeScript",

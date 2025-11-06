@@ -4,8 +4,9 @@ export const metadata = {
   title: "Habilidades",
   description:
     "Tecnologías y herramientas que uso para construir productos digitales.",
+  url: "https://gianluca-cianchi.com.ar/skills",
   openGraph: {
-    title: "Habilidades | Portfolio",
+    title: "Habilidades | Gianluca Cianchi Portfolio",
     description:
       "Tecnologías y herramientas que uso para construir productos digitales.",
   },

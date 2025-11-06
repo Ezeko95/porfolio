@@ -11,38 +11,122 @@ import {
 } from "@/components/ui/card";
 import { MessageCircle, Mail, Github, Linkedin } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
+import { useToast } from "@/components/toast-provider";
+
+interface FormErrors {
+  name?: string;
+  email?: string;
+  message?: string;
+}
 
 export function ContactClient() {
   const { t } = useI18n();
+  const { showToast } = useToast();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+  const [errors, setErrors] = useState<FormErrors>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitted, setSubmitted] = useState(false);
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    // Name validation
+    if (!formData.name.trim()) {
+      newErrors.name = "El nombre es requerido";
+    } else if (formData.name.trim().length < 2) {
+      newErrors.name = "El nombre debe tener al menos 2 caracteres";
+    } else if (formData.name.trim().length > 100) {
+      newErrors.name = "El nombre no puede exceder 100 caracteres";
+    }
+
+    // Email validation
+    if (!formData.email.trim()) {
+      newErrors.email = "El email es requerido";
+    } else {
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(formData.email.trim())) {
+        newErrors.email = "Por favor ingresa un email válido";
+      }
+    }
+
+    // Message validation
+    if (!formData.message.trim()) {
+      newErrors.message = "El mensaje es requerido";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "El mensaje debe tener al menos 10 caracteres";
+    } else if (formData.message.trim().length > 1000) {
+      newErrors.message = "El mensaje no puede exceder 1000 caracteres";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+
+    // Validate form before submission
+    if (!validateForm()) {
+      showToast("Por favor corrige los errores en el formulario", "error");
+      return;
+    }
+
     setIsSubmitting(true);
+    setErrors({});
 
-    // Simulate form submission (client-side only for now)
-    await new Promise((resolve) => setTimeout(resolve, 1000));
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name.trim(),
+          email: formData.email.trim(),
+          message: formData.message.trim(),
+        }),
+      });
 
-    setIsSubmitting(false);
-    setSubmitted(true);
-    setFormData({ name: "", email: "", message: "" });
+      const data = await response.json();
 
-    setTimeout(() => setSubmitted(false), 5000);
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to send message");
+      }
+
+      showToast(
+        t.contact.form.success || "Mensaje enviado exitosamente",
+        "success"
+      );
+      setFormData({ name: "", email: "", message: "" });
+    } catch (err) {
+      const errorMessage =
+        err instanceof Error
+          ? err.message
+          : "Ocurrió un error. Por favor intenta nuevamente.";
+      showToast(errorMessage, "error");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
   ) => {
+    const { name, value } = e.target;
     setFormData((prev) => ({
       ...prev,
-      [e.target.name]: e.target.value,
+      [name]: value,
     }));
+    // Clear error for this field when user starts typing
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: undefined,
+      }));
+    }
   };
 
   return (
@@ -79,9 +163,17 @@ export function ContactClient() {
                     name="name"
                     value={formData.name}
                     onChange={handleChange}
-                    required
-                    className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    className={`w-full px-3 py-2 rounded-md border bg-background text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ${
+                      errors.name
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : "border-input"
+                    }`}
                   />
+                  {errors.name && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.name}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -95,9 +187,17 @@ export function ContactClient() {
                     name="email"
                     value={formData.email}
                     onChange={handleChange}
-                    required
-                    className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring"
+                    className={`w-full px-3 py-2 rounded-md border bg-background text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring ${
+                      errors.email
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : "border-input"
+                    }`}
                   />
+                  {errors.email && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.email}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -110,16 +210,19 @@ export function ContactClient() {
                     name="message"
                     value={formData.message}
                     onChange={handleChange}
-                    required
                     rows={5}
-                    className="w-full px-3 py-2 rounded-md border border-input bg-background text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring resize-none"
+                    className={`w-full px-3 py-2 rounded-md border bg-background text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring resize-none ${
+                      errors.message
+                        ? "border-red-500 focus-visible:ring-red-500"
+                        : "border-input"
+                    }`}
                   />
+                  {errors.message && (
+                    <p className="mt-1 text-sm text-red-600 dark:text-red-400">
+                      {errors.message}
+                    </p>
+                  )}
                 </div>
-                {submitted && (
-                  <div className="p-3 rounded-md bg-green-500/10 text-green-600 dark:text-green-400 text-sm">
-                    {t.contact.form.success}
-                  </div>
-                )}
                 <Button
                   type="submit"
                   disabled={isSubmitting}
@@ -135,15 +238,15 @@ export function ContactClient() {
               <CardHeader>
                 <CardTitle>Otras formas de contacto</CardTitle>
               </CardHeader>
-              <CardContent className="space-y-4">
+              <CardContent className="space-y-4 ">
                 <Button
                   variant="outline"
-                  className="w-full justify-start hover:bg-secondary/80 p-6">
+                  className="w-full justify-start hover:bg-secondary/80 p-6 hover:bg-green-500 hover:text-white hover:cursor-pointer">
                   <a
                     href="https://wa.me/5491156565405"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center">
+                    className="flex items-center hover:text-primary ">
                     <MessageCircle className="h-4 w-4 mr-2" />
                     {t.contact.whatsapp}
                   </a>

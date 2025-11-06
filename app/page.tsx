@@ -4,6 +4,7 @@ export const metadata = {
   title: "Inicio",
   description:
     "Desarrollador Full-Stack especializado en JavaScript, TypeScript, Next.js y Python/Django.",
+  url: "https://gianluca-cianchi.com.ar",
   openGraph: {
     title: "Portfolio - Desarrollador Full-Stack",
     description:

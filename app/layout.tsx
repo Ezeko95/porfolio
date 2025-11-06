@@ -1,8 +1,9 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { I18nProvider } from "@/lib/i18n-context";
+import { ToastProvider } from "@/components/toast-provider";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { JsonLd } from "@/components/json-ld";
@@ -29,20 +30,36 @@ export const metadata: Metadata = {
     "React",
     "web development",
   ],
-  authors: [{ name: "Portfolio" }],
-  creator: "Portfolio",
+  authors: [{ name: "Gianluca Cianchi" }],
+  creator: "Gianluca Cianchi",
   openGraph: {
     type: "website",
     locale: "es_AR",
-    url: "https://porfolio-lovat-psi.vercel.app/",
-    title: "Portfolio - Desarrollador Full-Stack",
+    url: "https://gianluca-cianchi.com.ar",
+    title: "Gianluca Cianchi Portfolio - Desarrollador Full-Stack",
     description:
       "Desarrollador Full-Stack especializado en JavaScript, TypeScript, Next.js y Python/Django.",
-    siteName: "Portfolio",
+    siteName: "Gianluca Cianchi Portfolio",
+    images: [
+      {
+        url: "/gianluca-avatar.png",
+        width: 512,
+        height: 512,
+        alt: "Gianluca Cianchi avatar",
+      },
+    ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Portfolio - Desarrollador Full-Stack",
+    title: "Gianluca Cianchi Portfolio - Desarrollador Full-Stack",
+    images: [
+      {
+        url: "/gianluca-avatar.png",
+        width: 512,
+        height: 512,
+        alt: "Gianluca Cianchi avatar",
+      },
+    ],
     description:
       "Desarrollador Full-Stack especializado en JavaScript, TypeScript, Next.js y Python/Django.",
   },
@@ -50,10 +67,11 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
-  viewport: {
-    width: "device-width",
-    initialScale: 1,
-  },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
@@ -64,17 +82,20 @@ export default function RootLayout({
   return (
     <html lang="es" suppressHydrationWarning>
       <head>
+        <link rel="icon" href="/favicon.ico" />
         <link rel="canonical" href="https://porfolio-lovat-psi.vercel.app/" />
       </head>
       <body className={inter.variable}>
         <JsonLd />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <I18nProvider>
-            <div className="flex min-h-screen flex-col">
-              <Header />
-              <main className="flex-1">{children}</main>
-              <Footer />
-            </div>
+            <ToastProvider>
+              <div className="flex min-h-screen flex-col">
+                <Header />
+                <main className="flex-1">{children}</main>
+                <Footer />
+              </div>
+            </ToastProvider>
           </I18nProvider>
         </ThemeProvider>
       </body>

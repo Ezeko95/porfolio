@@ -7,6 +7,6 @@ export default function robots(): MetadataRoute.Robots {
       allow: "/",
       disallow: "/api/",
     },
-    sitemap: "https://porfolio-lovat-psi.vercel.app/sitemap.xml",
+    sitemap: "https://gianluca-cianchi.com.ar/sitemap.xml",
   };
 }
