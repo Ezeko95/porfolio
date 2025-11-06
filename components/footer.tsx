@@ -12,7 +12,7 @@ export function Footer() {
   return (
     <footer className="border-t bg-background">
       <div className="container mx-auto py-12 md:py-16">
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 justify-items-center">
           <div>
             <h3 className="font-semibold mb-4">Portfolio</h3>
             <p className="text-sm text-muted-foreground">{t.footer.built}</p>

@@ -15,7 +15,7 @@ export function HomeClient() {
         <Image src="/gianluca-avatar.png" alt="Gianluca Cianchi avatar" width={300} height={300} />
 
         </div>
-        <div className="space-y-4 max-w-3xl">
+        <div className="space-y-4 max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
             {t.home.hero.title}
           </h1>
