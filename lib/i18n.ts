@@ -71,6 +71,8 @@ export const translations = {
       title: "Contacto",
       description: "¿Tienes un proyecto en mente? Me encantaría escucharlo.",
       form: {
+        title: "Envíame un mensaje",
+        description: "Completa el formulario y te responderé lo antes posible.",
         name: "Nombre",
         email: "Email",
         message: "Mensaje",
@@ -78,6 +80,8 @@ export const translations = {
         sending: "Enviando...",
         success: "¡Mensaje enviado! Te responderé pronto.",
       },
+      otherWays: "Otras formas de contacto",
+      socialMedia: "Redes Sociales",
       whatsapp: "Contactar por WhatsApp",
     },
     footer: {
@@ -154,6 +158,9 @@ export const translations = {
       title: "Contact",
       description: "Have a project in mind? I'd love to hear about it.",
       form: {
+        title: "Send me a message",
+        description:
+          "Fill out the form and I'll get back to you as soon as possible.",
         name: "Name",
         email: "Email",
         message: "Message",
@@ -161,6 +168,8 @@ export const translations = {
         sending: "Sending...",
         success: "Message sent! I'll get back to you soon.",
       },
+      otherWays: "Other ways to contact",
+      socialMedia: "Social Media",
       whatsapp: "Contact via WhatsApp",
     },
     footer: {

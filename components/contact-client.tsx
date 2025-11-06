@@ -144,10 +144,8 @@ export function ContactClient() {
         <div className="grid gap-8 md:grid-cols-2 max-w-4xl mx-auto">
           <Card>
             <CardHeader>
-              <CardTitle>Envíame un mensaje</CardTitle>
-              <CardDescription>
-                Completa el formulario y te responderé lo antes posible.
-              </CardDescription>
+              <CardTitle>{t.contact.form.title}</CardTitle>
+              <CardDescription>{t.contact.form.description}</CardDescription>
             </CardHeader>
             <CardContent>
               <form onSubmit={handleSubmit} className="space-y-4">
@@ -236,7 +234,7 @@ export function ContactClient() {
           <div className="space-y-6">
             <Card>
               <CardHeader>
-                <CardTitle>Otras formas de contacto</CardTitle>
+                <CardTitle>{t.contact.otherWays}</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4 ">
                 <Button
@@ -256,7 +254,7 @@ export function ContactClient() {
 
             <Card>
               <CardHeader>
-                <CardTitle>Redes Sociales</CardTitle>
+                <CardTitle>{t.contact.socialMedia}</CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="flex gap-4">
