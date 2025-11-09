@@ -49,4 +49,13 @@ export const projects = [
     projectUrl: "https://proyecto-individual-countries-ruddy.vercel.app/",
     codeUrl: null as string | null,
   },
+  {
+    id: 6,
+    title: "Cuore AV landing page",
+    description: "Landing page para la productora audiovisual Cuore AV.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS"],
+    image: "/cuore.png",
+    projectUrl: "https://cuore-three.vercel.app/",
+    codeUrl: null as string | null,
+  },
 ];
