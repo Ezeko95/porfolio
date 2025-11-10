@@ -21,12 +21,11 @@ export const projects = [
   },
   {
     id: 3,
-    title: "Plataforma eLearning",
-    description:
-      "Sistema de eLearning con autenticación, gestión de usuarios y contenido para empresa española.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS"],
-    image: "/digital-market.png",
-    projectUrl: "https://dm-plataforma.vercel.app/",
+    title: "Cuore AV landing page",
+    description: "Landing page para la productora audiovisual Cuore AV.",
+    tech: ["Next.js", "TypeScript", "TailwindCSS"],
+    image: "/cuore.png",
+    projectUrl: "https://cuore-three.vercel.app/",
     codeUrl: null as string | null,
   },
   {
@@ -51,11 +50,12 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Cuore AV landing page",
-    description: "Landing page para la productora audiovisual Cuore AV.",
-    tech: ["Next.js", "TypeScript", "TailwindCSS"],
-    image: "/cuore.png",
-    projectUrl: "https://cuore-three.vercel.app/",
+    title: "Plataforma eLearning",
+    description:
+      "Sistema de eLearning con autenticación, gestión de usuarios y contenido para empresa española.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS"],
+    image: "/digital-market.png",
+    projectUrl: "https://dm-plataforma.vercel.app/",
     codeUrl: null as string | null,
   },
 ];
