@@ -61,10 +61,34 @@ export const translations = {
       title: "Sobre Mí",
       subtitle: "Construyendo productos digitales con propósito",
       story:
-        "Soy un desarrollador full-stack apasionado por crear soluciones web que combinen funcionalidad, rendimiento y una experiencia de usuario excepcional. Mi enfoque se centra en escribir código limpio, mantenible y escalable.",
+        "Soy un desarrollador full-stack y estudiante en la Tecnicatura en Desarrollo de Software, apasionado por crear soluciones web que combinen funcionalidad, rendimiento y una experiencia de usuario excepcional. Mi enfoque se centra en escribir código limpio, mantenible y escalable.",
       philosophy: {
         title: "Mi Filosofía",
         text: "Creo que el mejor software es aquel que resuelve problemas reales de manera eficiente. Priorizo la claridad en el código, la optimización del rendimiento y la accesibilidad, siempre con el usuario final en mente.",
+      },
+      certifications: {
+        title: "Certificaciones",
+        description:
+          "Certificaciones y credenciales que validan mi experiencia y conocimientos",
+        issuedOn: "Emitida en",
+        viewCredential: "Ver credencial",
+      },
+      values: {
+        focus: {
+          title: "Mi enfoque",
+          description:
+            "Constantemente en crecimiento, aprendiendo y mejorando mis habilidades.",
+        },
+        objective: {
+          title: "Mi objetivo",
+          description:
+            "Disfruto creando, resolviendo problemas y ayudando a las personas. Siempre dispuesto a ayudar y aprender de los demás.",
+        },
+        motivation: {
+          title: "Mi motivación",
+          description:
+            "Me motiva la posibilidad de crear soluciones que impacten positivamente a la vida de las personas.",
+        },
       },
     },
     contact: {
@@ -101,11 +125,13 @@ export const translations = {
         },
         {
           question: "¿En que consiste tu trabajo?",
-          answer: "Mi trabajo es hacer que los sitios web y las aplicaciones funcionen. El diseñador se ocupa de cómo se ven, y yo me ocupo de que todo eso cobre vida: que los botones hagan lo que deben, que los datos se guarden correctamente, que las páginas carguen rápido y que el sistema entero esté conectado entre sí.",
+          answer:
+            "Mi trabajo es hacer que los sitios web y las aplicaciones funcionen. El diseñador se ocupa de cómo se ven, y yo me ocupo de que todo eso cobre vida: que los botones hagan lo que deben, que los datos se guarden correctamente, que las páginas carguen rápido y que el sistema entero esté conectado entre sí.",
         },
         {
           question: "¿Puedes diseñar un sitio web?",
-          answer: "Si! Además de desarrollar sitios y aplicaciones web, también puedo encargarme del diseño. No soy diseñador profesional, pero aplico los principios básicos del diseño —como el equilibrio, la jerarquía visual y la elección de colores y tipografías— para crear sitios que se vean modernos, limpios y que transmitan lo que mis clientes buscan.",
+          answer:
+            "Si! Además de desarrollar sitios y aplicaciones web, también puedo encargarme del diseño. No soy diseñador profesional, pero aplico los principios básicos del diseño —como el equilibrio, la jerarquía visual y la elección de colores y tipografías— para crear sitios que se vean modernos, limpios y que transmitan lo que mis clientes buscan.",
         },
         {
           question: "¿Qué tecnologías utilizas?",
@@ -187,10 +213,33 @@ export const translations = {
       title: "About Me",
       subtitle: "Building digital products with purpose",
       story:
-        "I'm a full-stack developer passionate about creating web solutions that combine functionality, performance, and exceptional user experience. My focus is on writing clean, maintainable, and scalable code.",
+        "I'm a full-stack developer and Software Development student, passionate about creating web solutions that combine functionality, performance, and exceptional user experience. My focus is on writing clean, maintainable, and scalable code.",
       philosophy: {
         title: "My Philosophy",
         text: "I believe the best software is one that solves real problems efficiently. I prioritize code clarity, performance optimization, and accessibility, always with the end user in mind.",
+      },
+      certifications: {
+        title: "Certifications",
+        description:
+          "Certifications and credentials that validate my experience and knowledge",
+        issuedOn: "Issued on",
+        viewCredential: "View credential",
+      },
+      values: {
+        focus: {
+          title: "My focus",
+          description: "Constantly growing, learning, and improving my skills.",
+        },
+        objective: {
+          title: "My objective",
+          description:
+            "I enjoy creating, solving problems, and helping people. Always willing to help and learn from others.",
+        },
+        motivation: {
+          title: "My motivation",
+          description:
+            "I am motivated by the possibility of creating solutions that positively impact the lives of people.",
+        },
       },
     },
     contact: {
@@ -258,7 +307,6 @@ export const translations = {
         },
       ],
     },
-    
   },
 } as const;
 

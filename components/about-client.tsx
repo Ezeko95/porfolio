@@ -2,14 +2,23 @@
 
 import { useI18n } from "@/lib/i18n-context";
 import Image from "next/image";
-import { Code2, Target, Zap } from "lucide-react";
+import { Code2, Target, Zap, Award, ExternalLink } from "lucide-react";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { certifications } from "@/lib/certifications";
 
 export function AboutClient() {
   const { t } = useI18n();
 
   return (
-    <div className="container mx-auto py-12 md:py-24">
-      <div className="space-y-12 animate-fade-in">
+    <div className="container mx-auto py-12 md:py-24 ">
+      <div className="space-y-12 animate-fade-in lg:space-y-36">
         <div className="text-center space-y-4">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl">
             {t.about.title}
@@ -30,9 +39,9 @@ export function AboutClient() {
             />
           </div>
 
-          <div className="space-y-6">
+          <div className="space-y-6 sm:">
             <div>
-              <h2 className="text-2xl font-semibold mb-4">Mi Historia</h2>
+              <h2 className="text-2xl font-semibold mb-4">{t.about.title}</h2>
               <p className="text-muted-foreground leading-relaxed">
                 {t.about.story}
               </p>
@@ -56,10 +65,11 @@ export function AboutClient() {
                 <Code2 className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <h3 className="font-semibold text-lg">Código Limpio</h3>
+            <h3 className="font-semibold text-lg">
+              {t.about.values.focus.title}
+            </h3>
             <p className="text-sm text-muted-foreground">
-              Priorizo la legibilidad, mantenibilidad y escalabilidad en cada
-              línea de código.
+              {t.about.values.focus.description}
             </p>
           </div>
 
@@ -69,10 +79,11 @@ export function AboutClient() {
                 <Target className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <h3 className="font-semibold text-lg">Enfocado en Resultados</h3>
+            <h3 className="font-semibold text-lg">
+              {t.about.values.objective.title}
+            </h3>
             <p className="text-sm text-muted-foreground">
-              Cada proyecto debe resolver problemas reales y agregar valor
-              tangible.
+              {t.about.values.objective.description}
             </p>
           </div>
 
@@ -82,11 +93,63 @@ export function AboutClient() {
                 <Zap className="h-8 w-8 text-primary" />
               </div>
             </div>
-            <h3 className="font-semibold text-lg">Optimización</h3>
+            <h3 className="font-semibold text-lg">
+              {t.about.values.motivation.title}
+            </h3>
             <p className="text-sm text-muted-foreground">
-              Rendimiento y velocidad son esenciales para una excelente
-              experiencia de usuario.
+              {t.about.values.motivation.description}
             </p>
+          </div>
+        </div>
+
+        <div className="mt-16 space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              {t.about.certifications.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t.about.certifications.description}
+            </p>
+          </div>
+
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {certifications.map((certification) => (
+              <Card
+                key={certification.id}
+                className="flex flex-col hover:shadow-lg transition-shadow">
+                <CardHeader>
+                  <div className="flex items-start justify-between mb-2">
+                    <div className="p-2 rounded-lg bg-primary/10">
+                      <Award className="h-5 w-5 text-primary" />
+                    </div>
+                  </div>
+                  <CardTitle className="text-lg">
+                    {certification.title}
+                  </CardTitle>
+                  <CardDescription>{certification.issuer}</CardDescription>
+                </CardHeader>
+                <CardContent className="flex-1">
+                  <p className="text-sm text-muted-foreground mb-4">
+                    {certification.description}
+                  </p>
+                  <div className="text-xs text-muted-foreground">
+                    {t.about.certifications.issuedOn}: {certification.issueDate}
+                  </div>
+                </CardContent>
+                {certification.credentialUrl && (
+                  <CardFooter>
+                    <a
+                      href={certification.credentialUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-sm text-primary hover:underline flex items-center gap-1">
+                      {t.about.certifications.viewCredential}
+                      <ExternalLink className="h-3 w-3" />
+                    </a>
+                  </CardFooter>
+                )}
+              </Card>
+            ))}
           </div>
         </div>
       </div>
