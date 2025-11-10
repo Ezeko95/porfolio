@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { ArrowRight, Code, Zap } from "lucide-react";
 import { useI18n } from "@/lib/i18n-context";
 import Image from "next/image";
+import { FAQ } from "@/components/faq";
 export function HomeClient() {
   const { t } = useI18n();
 
@@ -28,13 +29,13 @@ export function HomeClient() {
         </div>
 
         <div className="flex flex-col sm:flex-row gap-4">
-          <Button size="lg" className="group ">
+          <Button size="lg" className="group cursor-pointer">
             <Link href="/projects" className="flex items-center justify-center">
               {t.home.hero.ctaProjects}
               <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
             </Link>
           </Button>
-          <Button variant="outline" size="lg">
+          <Button variant="outline" size="lg" className="cursor-pointer">
             <Link href="/contact">{t.home.hero.ctaContact}</Link>
           </Button>
         </div>
@@ -75,6 +76,16 @@ export function HomeClient() {
           </p>
         </div>
       </section>
+
+      <FAQ />
+
+      <div className="container mx-auto"> 
+        <div className="flex justify-center">
+          <Button variant="outline" size="lg">
+            <Link href="/contact">{t.home.hero.ctaContact}</Link>
+          </Button>
+        </div>
+      </div>
 
     </div>
   );

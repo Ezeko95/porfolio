@@ -18,7 +18,7 @@ export const translations = {
         description:
           "Especializado en JavaScript, TypeScript, Next.js y Python/Django. Enfocado en crear experiencias de usuario excepcionales y código mantenible.",
         ctaProjects: "Ver Proyectos",
-        ctaContact: "Contactarme",
+        ctaContact: "Contactame!",
       },
       highlightedProjects: {
         title: "Mis proyectos",
@@ -90,6 +90,45 @@ export const translations = {
       quickLinks: "Enlaces Rápidos",
       social: "Redes Sociales",
     },
+    faq: {
+      title: "Preguntas Frecuentes",
+      description: "Respuestas a las preguntas más comunes sobre mis servicios",
+      items: [
+        {
+          question: "¿Qué es un desarrollador full-stack?",
+          answer:
+            "Un desarrollador full-stack es un profesional que puede trabajar en ambos lados de la pila de desarrollo: frontend y backend. Puede crear interfaces de usuario, manejar bases de datos y desarrollar la lógica del servidor.",
+        },
+        {
+          question: "¿En que consiste tu trabajo?",
+          answer: "Mi trabajo es hacer que los sitios web y las aplicaciones funcionen. El diseñador se ocupa de cómo se ven, y yo me ocupo de que todo eso cobre vida: que los botones hagan lo que deben, que los datos se guarden correctamente, que las páginas carguen rápido y que el sistema entero esté conectado entre sí.",
+        },
+        {
+          question: "¿Puedes diseñar un sitio web?",
+          answer: "Si! Además de desarrollar sitios y aplicaciones web, también puedo encargarme del diseño. No soy diseñador profesional, pero aplico los principios básicos del diseño —como el equilibrio, la jerarquía visual y la elección de colores y tipografías— para crear sitios que se vean modernos, limpios y que transmitan lo que mis clientes buscan.",
+        },
+        {
+          question: "¿Qué tecnologías utilizas?",
+          answer:
+            "Trabajo principalmente con JavaScript, TypeScript, Next.js para el frontend y Python/Django para el backend. También tengo experiencia con React, Node.js, PostgreSQL y diversas herramientas de desarrollo modernas.",
+        },
+        {
+          question: "¿Cuánto tiempo toma desarrollar un proyecto?",
+          answer:
+            "El tiempo de desarrollo depende del alcance y complejidad del proyecto. Proyectos simples pueden tomar días o semanas, mientras que aplicaciones más complejas pueden requerir varios meses. Siempre proporciono estimaciones detalladas después de analizar los requisitos.",
+        },
+        {
+          question: "¿Ofreces mantenimiento después del lanzamiento?",
+          answer:
+            "Sí, ofrezco servicios de mantenimiento y soporte continuo. Esto incluye actualizaciones de seguridad, corrección de errores, mejoras de rendimiento y nuevas funcionalidades según las necesidades del proyecto.",
+        },
+        {
+          question: "¿Cómo puedo contactarte para un proyecto?",
+          answer:
+            "Puedes contactarme a través del formulario de contacto en esta página, o mediante mis redes sociales. Respondo a todas las consultas en un plazo de 24-48 horas.",
+        },
+      ],
+    },
   },
   en: {
     nav: {
@@ -106,7 +145,7 @@ export const translations = {
         description:
           "Specialized in JavaScript, TypeScript, Next.js, and Python/Django. Focused on creating exceptional user experiences and maintainable code.",
         ctaProjects: "View Projects",
-        ctaContact: "Contact Me",
+        ctaContact: "Contact Me!",
       },
       highlightedProjects: {
         title: "My Projects",
@@ -178,6 +217,48 @@ export const translations = {
       quickLinks: "Quick Links",
       social: "Social Media",
     },
+    faq: {
+      title: "Frequently Asked Questions",
+      description: "Answers to the most common questions about my services",
+      items: [
+        {
+          question: "What is a full-stack developer?",
+          answer:
+            "A full-stack developer is a professional who can work on both sides of the development stack: frontend and backend. They can create user interfaces, manage databases, and develop server-side logic.",
+        },
+        {
+          question: "What does your job involve?",
+          answer:
+            "My job is to make websites and applications work. Designers focus on how things look, and I focus on bringing them to life — making sure buttons do what they should, data is saved correctly, pages load fast, and everything works seamlessly together.",
+        },
+        {
+          question: "Can you design a website?",
+          answer:
+            "Yes! In addition to developing websites and web applications, I can also handle the design. I’m not a professional designer, but I apply basic design principles — such as balance, visual hierarchy, and thoughtful use of colors and typography — to create modern, clean sites that reflect what my clients are looking for.",
+        },
+        {
+          question: "What technologies do you use?",
+          answer:
+            "I mainly work with JavaScript, TypeScript, and Next.js for the frontend, and Python/Django for the backend. I also have experience with React, Node.js, PostgreSQL, and various modern development tools.",
+        },
+        {
+          question: "How long does it take to develop a project?",
+          answer:
+            "The development time depends on the scope and complexity of the project. Simple projects can take days or weeks, while more complex applications may require several months. I always provide detailed estimates after analyzing the requirements.",
+        },
+        {
+          question: "Do you offer maintenance after launch?",
+          answer:
+            "Yes, I offer ongoing maintenance and support services. This includes security updates, bug fixes, performance improvements, and new features according to the project’s needs.",
+        },
+        {
+          question: "How can I contact you for a project?",
+          answer:
+            "You can contact me through the contact form on this page or via my social media. I respond to all inquiries within 24–48 hours.",
+        },
+      ],
+    },
+    
   },
 } as const;
 
