@@ -124,32 +124,32 @@ export const translations = {
             "Un desarrollador full-stack es un profesional que puede trabajar en ambos lados de la pila de desarrollo: frontend y backend. Puede crear interfaces de usuario, manejar bases de datos y desarrollar la lógica del servidor.",
         },
         {
-          question: "¿En que consiste tu trabajo?",
+          question: "¿En qué consiste tu trabajo?",
           answer:
             "Mi trabajo es hacer que los sitios web y las aplicaciones funcionen. El diseñador se ocupa de cómo se ven, y yo me ocupo de que todo eso cobre vida: que los botones hagan lo que deben, que los datos se guarden correctamente, que las páginas carguen rápido y que el sistema entero esté conectado entre sí.",
         },
         {
-          question: "¿Puedes diseñar un sitio web?",
+          question: "¿Podés diseñar un sitio web?",
           answer:
             "Si! Además de desarrollar sitios y aplicaciones web, también puedo encargarme del diseño. No soy diseñador profesional, pero aplico los principios básicos del diseño —como el equilibrio, la jerarquía visual y la elección de colores y tipografías— para crear sitios que se vean modernos, limpios y que transmitan lo que mis clientes buscan.",
         },
         {
-          question: "¿Qué tecnologías utilizas?",
+          question: "¿Qué tecnologías usás?",
           answer:
             "Trabajo principalmente con JavaScript, TypeScript, Next.js para el frontend y Python/Django para el backend. También tengo experiencia con React, Node.js, PostgreSQL y diversas herramientas de desarrollo modernas.",
         },
         {
-          question: "¿Cuánto tiempo toma desarrollar un proyecto?",
+          question: "¿Cuánto tiempo tomás para desarrollar un proyecto?",
           answer:
             "El tiempo de desarrollo depende del alcance y complejidad del proyecto. Proyectos simples pueden tomar días o semanas, mientras que aplicaciones más complejas pueden requerir varios meses. Siempre proporciono estimaciones detalladas después de analizar los requisitos.",
         },
         {
-          question: "¿Ofreces mantenimiento después del lanzamiento?",
+          question: "¿Ofrecés mantenimiento después del lanzamiento?",
           answer:
             "Sí, ofrezco servicios de mantenimiento y soporte continuo. Esto incluye actualizaciones de seguridad, corrección de errores, mejoras de rendimiento y nuevas funcionalidades según las necesidades del proyecto.",
         },
         {
-          question: "¿Cómo puedo contactarte para un proyecto?",
+          question: "¿Cómo podés contactarme para un proyecto?",
           answer:
             "Puedes contactarme a través del formulario de contacto en esta página, o mediante mis redes sociales. Respondo a todas las consultas en un plazo de 24-48 horas.",
         },

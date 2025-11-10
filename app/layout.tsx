@@ -47,8 +47,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: "/gianluca-avatar.png",
-        width: 512,
-        height: 512,
+        width: 420,
+        height: 420,
         alt: "Gianluca Cianchi avatar",
       },
     ],
