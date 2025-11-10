@@ -14,6 +14,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://gianluca-cianchi.com.ar"),
   title: {
     default: "Portfolio - Desarrollador Full-Stack",
     template: "%s | Portfolio",
