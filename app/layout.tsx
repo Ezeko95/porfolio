@@ -31,6 +31,9 @@ export const metadata: Metadata = {
     "React",
     "web development",
   ],
+  icons: {
+    icon: "/favicon.ico",
+  },
   authors: [{ name: "Gianluca Cianchi" }],
   creator: "Gianluca Cianchi",
   openGraph: {
