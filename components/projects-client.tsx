@@ -41,6 +41,13 @@ export function ProjectsClient() {
                   fill
                   className="object-cover"
                 />
+                {project.is_active && (
+                  <div className="absolute top-3 right-3">
+                    <span className="px-3 py-1 text-xs font-semibold rounded-full bg-amber-500 text-amber-950 shadow-md">
+                      {t.projects.inProgress}
+                    </span>
+                  </div>
+                )}
               </div>
               <CardHeader>
                 <CardTitle>{project.title}</CardTitle>

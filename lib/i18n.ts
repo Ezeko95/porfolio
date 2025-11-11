@@ -49,6 +49,7 @@ export const translations = {
       viewProject: "Ver Proyecto",
       viewCode: "Ver Código",
       tech: "Tecnologías",
+      inProgress: "en progreso",
     },
     skills: {
       title: "Habilidades",
@@ -252,6 +253,7 @@ export const translations = {
       viewProject: "View Project",
       viewCode: "View Code",
       tech: "Technologies",
+      inProgress: "in progress",
     },
     skills: {
       title: "Skills",
