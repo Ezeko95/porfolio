@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { Moon, Sun, Languages } from "lucide-react";
+import { Moon, Sun, Languages, Download } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState, startTransition } from "react";
 import { Button } from "@/components/ui/button";
@@ -10,7 +10,7 @@ import { useI18n } from "@/lib/i18n-context";
 
 export function Header() {
   const { theme, setTheme } = useTheme();
-  const { locale, setLocale } = useI18n();
+  const { locale, setLocale, t } = useI18n();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -21,6 +21,19 @@ export function Header() {
 
   const toggleLanguage = () => {
     setLocale(locale === "es" ? "en" : "es");
+  };
+
+  const downloadCV = () => {
+    const cvFileName =
+      locale === "es"
+        ? "Gianluca-Cianchi-CV-es.pdf"
+        : "Gianluca-Cianchi-CV-en.pdf";
+    const link = document.createElement("a");
+    link.href = `/${cvFileName}`;
+    link.download = cvFileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   return (
@@ -54,6 +67,16 @@ export function Header() {
                 <Moon className="absolute h-5 w-5 rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
               </Button>
             )}
+
+            <Button
+              variant="outline"
+              size="sm"
+              onClick={downloadCV}
+              className="cursor-pointer"
+              aria-label={t.nav.downloadCV}>
+              <Download className="h-4 w-4" />
+              <span className="hidden sm:inline">{t.nav.downloadCV}</span>
+            </Button>
           </div>
         </div>
       </div>

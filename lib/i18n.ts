@@ -10,6 +10,7 @@ export const translations = {
       skills: "Habilidades",
       about: "Sobre Mí",
       contact: "Contacto",
+      downloadCV: "Descargar CV",
     },
     home: {
       hero: {
@@ -163,6 +164,7 @@ export const translations = {
       skills: "Skills",
       about: "About",
       contact: "Contact",
+      downloadCV: "Download CV",
     },
     home: {
       hero: {
