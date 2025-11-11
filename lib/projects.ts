@@ -8,6 +8,7 @@ export const projects = [
     image: "/house-and-garden.png",
     projectUrl: "https://houseandgarden.com.ar/",
     codeUrl: null as string | null,
+    is_active: true,
   },
   {
     id: 2,
@@ -18,6 +19,7 @@ export const projects = [
     image: "/perfect-transfer.png",
     projectUrl: "https://www.perfect-transfer.com.ar",
     codeUrl: null as string | null,
+    is_active: false,
   },
   {
     id: 3,
@@ -27,6 +29,7 @@ export const projects = [
     image: "/cuore.png",
     projectUrl: "https://cuore-three.vercel.app/",
     codeUrl: null as string | null,
+    is_active: true,
   },
   {
     id: 4,
@@ -37,6 +40,7 @@ export const projects = [
     image: "/barberia-barcelo.png",
     projectUrl: "https://barberia-barcelo.vercel.app/",
     codeUrl: null as string | null,
+    is_active: false,
   },
   {
     id: 5,
@@ -47,6 +51,7 @@ export const projects = [
     image: "/trabajo-practico.png",
     projectUrl: "https://proyecto-individual-countries-ruddy.vercel.app/",
     codeUrl: null as string | null,
+    is_active: false,
   },
   {
     id: 6,
@@ -57,5 +62,6 @@ export const projects = [
     image: "/digital-market.png",
     projectUrl: "https://dm-plataforma.vercel.app/",
     codeUrl: null as string | null,
+    is_active: false,
   },
 ];

@@ -2,7 +2,15 @@
 
 import { useI18n } from "@/lib/i18n-context";
 import Image from "next/image";
-import { Code2, Target, Zap, Award, ExternalLink } from "lucide-react";
+import {
+  Code2,
+  Target,
+  Zap,
+  Award,
+  ExternalLink,
+  Briefcase,
+  Code,
+} from "lucide-react";
 import {
   Card,
   CardContent,
@@ -58,49 +66,159 @@ export function AboutClient() {
           </div>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3 mt-12">
-          <div className="p-6 rounded-lg border bg-card text-center space-y-3">
-            <div className="flex justify-center">
-              <div className="p-3 rounded-full bg-primary/10">
-                <Code2 className="h-8 w-8 text-primary" />
-              </div>
-            </div>
-            <h3 className="font-semibold text-lg">
-              {t.about.values.focus.title}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {t.about.values.focus.description}
+        <div className="border-t border-gray-500" />
+
+        <div className="space-y-8">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              {t.about.values.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t.about.values.description}
             </p>
           </div>
-
-          <div className="p-6 rounded-lg border bg-card text-center space-y-3">
-            <div className="flex justify-center">
-              <div className="p-3 rounded-full bg-primary/10">
-                <Target className="h-8 w-8 text-primary" />
+          <div className="grid gap-6 md:grid-cols-3 ">
+            <div className="p-6 rounded-lg border bg-card text-center space-y-3">
+              <div className="flex justify-center">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Code2 className="h-8 w-8 text-primary" />
+                </div>
               </div>
+              <h3 className="font-semibold text-lg">
+                {t.about.values.focus.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {t.about.values.focus.description}
+              </p>
             </div>
-            <h3 className="font-semibold text-lg">
-              {t.about.values.objective.title}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {t.about.values.objective.description}
-            </p>
-          </div>
 
-          <div className="p-6 rounded-lg border bg-card text-center space-y-3">
-            <div className="flex justify-center">
-              <div className="p-3 rounded-full bg-primary/10">
-                <Zap className="h-8 w-8 text-primary" />
+            <div className="p-6 rounded-lg border bg-card text-center space-y-3">
+              <div className="flex justify-center">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Target className="h-8 w-8 text-primary" />
+                </div>
               </div>
+              <h3 className="font-semibold text-lg">
+                {t.about.values.objective.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {t.about.values.objective.description}
+              </p>
             </div>
-            <h3 className="font-semibold text-lg">
-              {t.about.values.motivation.title}
-            </h3>
-            <p className="text-sm text-muted-foreground">
-              {t.about.values.motivation.description}
-            </p>
+
+            <div className="p-6 rounded-lg border bg-card text-center space-y-3">
+              <div className="flex justify-center">
+                <div className="p-3 rounded-full bg-primary/10">
+                  <Zap className="h-8 w-8 text-primary" />
+                </div>
+              </div>
+              <h3 className="font-semibold text-lg">
+                {t.about.values.motivation.title}
+              </h3>
+              <p className="text-sm text-muted-foreground">
+                {t.about.values.motivation.description}
+              </p>
+            </div>
           </div>
         </div>
+
+        <div className="border-t border-gray-500" />
+
+        <div className="space-y-8 mt-12">
+          <div className="text-center space-y-2">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+              {t.about.experience.title}
+            </h2>
+            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+              {t.about.experience.description}
+            </p>
+          </div>
+          <Card className="animate-slide-up">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <Code className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <CardTitle className="text-2xl mb-2">
+                    {t.about.experience.fullStack.title}
+                  </CardTitle>
+                  <p className="text-sm text-muted-foreground">
+                    {t.about.experience.fullStack.period}
+                  </p>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                {t.about.experience.fullStack.description}
+              </p>
+              <p className="text-muted-foreground leading-relaxed">
+                {t.about.experience.fullStack.focus}
+              </p>
+              <div className="space-y-3">
+                <p className="font-semibold">
+                  {t.about.experience.fullStack.projects}
+                </p>
+                <ul className="space-y-4">
+                  {t.about.experience.fullStack.projectsList.map(
+                    (project, index) => (
+                      <li key={index} className="space-y-1">
+                        <p className="font-medium">{project.name}</p>
+                        <p className="text-sm text-muted-foreground leading-relaxed">
+                          {project.description}
+                        </p>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+              <p className="text-muted-foreground leading-relaxed pt-2">
+                {t.about.experience.fullStack.approach}
+              </p>
+            </CardContent>
+          </Card>
+
+          <Card className="animate-slide-up">
+            <CardHeader>
+              <div className="flex items-start gap-4">
+                <div className="p-3 rounded-lg bg-primary/10">
+                  <Briefcase className="h-6 w-6 text-primary" />
+                </div>
+                <div className="flex-1">
+                  <CardTitle className="text-2xl mb-2">
+                    {t.about.experience.technician.title}
+                  </CardTitle>
+                  <p className="text-sm text-muted-foreground">
+                    {t.about.experience.technician.period}
+                  </p>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <p className="text-muted-foreground leading-relaxed">
+                {t.about.experience.technician.description}
+              </p>
+              <div className="space-y-3">
+                <p className="font-semibold">
+                  {t.about.experience.technician.impact}
+                </p>
+                <ul className="space-y-2 list-disc list-inside">
+                  {t.about.experience.technician.skills.map((skill, index) => (
+                    <li key={index} className="text-muted-foreground">
+                      {skill}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <p className="text-muted-foreground leading-relaxed pt-2">
+                {t.about.experience.technician.conclusion}
+              </p>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="border-t border-gray-500" />
 
         <div className="mt-16 space-y-8">
           <div className="text-center space-y-2">

@@ -13,8 +13,12 @@ export function HomeClient() {
     <div className="container mx-auto py-12 md:py-24 lg:pb-32">
       <section className="flex flex-col items-center text-center space-y-8 animate-fade-in">
         <div>
-        <Image src="/gianluca-avatar.png" alt="Gianluca Cianchi avatar" width={300} height={300} />
-
+          <Image
+            src="/gianluca-avatar.png"
+            alt="Gianluca Cianchi avatar"
+            width={300}
+            height={300}
+          />
         </div>
         <div className="space-y-4 max-w-4xl">
           <h1 className="text-4xl font-bold tracking-tight sm:text-5xl md:text-6xl lg:text-7xl">
@@ -77,16 +81,17 @@ export function HomeClient() {
         </div>
       </section>
 
+      <div className="border-t border-gray-500 mt-32" />
+
       <FAQ />
 
-      <div className="container mx-auto"> 
+      <div className="container mx-auto">
         <div className="flex justify-center">
           <Button variant="outline" size="lg">
             <Link href="/contact">{t.home.hero.ctaContact}</Link>
           </Button>
         </div>
       </div>
-
     </div>
   );
 }

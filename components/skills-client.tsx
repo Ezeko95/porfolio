@@ -1,12 +1,7 @@
 "use client";
 
 import { useI18n } from "@/lib/i18n-context";
-import {
-  Database,
-  Terminal,
-  Layout,
-  Server,
-} from "lucide-react";
+import { Database, Terminal, Layout, Server } from "lucide-react";
 
 const skillCategories = [
   {

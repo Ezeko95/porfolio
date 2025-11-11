@@ -224,7 +224,7 @@ export function ContactClient() {
                 <Button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full">
+                  className="w-full cursor-pointer dark:border-white dark:hover:bg-white/50">
                   {isSubmitting ? t.contact.form.sending : t.contact.form.send}
                 </Button>
               </form>

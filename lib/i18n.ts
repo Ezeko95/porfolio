@@ -67,6 +67,53 @@ export const translations = {
         title: "Mi Filosofía",
         text: "Creo que el mejor software es aquel que resuelve problemas reales de manera eficiente. Priorizo la claridad en el código, la optimización del rendimiento y la accesibilidad, siempre con el usuario final en mente.",
       },
+      experience: {
+        title: "Experiencia",
+        description: "Experiencia y habilidades que aprendí en mi trayectoria	",
+        fullStack: {
+          title: "Desarrollador Web Full Stack",
+          period: "Freelance | 2023 – Presente",
+          description:
+            "Desde 2023 trabajo de forma independiente desarrollando sitios y aplicaciones web modernas para empresas y emprendedores que buscan fortalecer su presencia digital.",
+          focus:
+            "Me enfoco en crear soluciones escalables, rápidas y optimizadas para SEO, aplicando buenas prácticas de desarrollo y diseño centrado en la experiencia del usuario.",
+          projects: "He trabajado en proyectos como:",
+          projectsList: [
+            {
+              name: "House & Garden",
+              description:
+                "Desarrollo de una tienda online completa con Next.js, PostgreSQL y Zustand. Integré pasarelas de pago con MercadoPago, notificaciones automáticas con Resend, y una arquitectura modular enfocada en rendimiento.",
+            },
+            {
+              name: "Modelty Dashboard",
+              description:
+                "Creación de un panel administrativo con Next.js, estructuración de base de datos optimizada y diseño de interfaz intuitiva.",
+            },
+            {
+              name: "Hermes Security Solutions (España)",
+              description:
+                "Desarrollo backend para una plataforma de IA aplicada a ciberseguridad, colaborando en la arquitectura de datos y la integración con modelos de machine learning.",
+            },
+          ],
+          approach:
+            "Mi enfoque combina lógica, diseño y rendimiento, priorizando la escalabilidad y la claridad del código en cada proyecto.",
+        },
+        technician: {
+          title: "⚙️ Técnico Industrial Especializado en Impresoras HP",
+          period: "Digital Market | 2018 – 2022 | Andalucía, España",
+          description:
+            "Durante más de cuatro años trabajé como técnico industrial especializado en impresoras de gran formato HP DesignJet y Latex, brindando soporte técnico, mantenimiento preventivo y resolución de problemas complejos a clientes empresariales.",
+          impact:
+            "Esa experiencia fortaleció mi perfil como desarrollador, dándome una base sólida en:",
+          skills: [
+            "Diagnóstico y resolución de problemas técnicos complejos.",
+            "Pensamiento sistemático y enfoque en la eficiencia.",
+            "Comunicación técnica con clientes y trabajo en entornos exigentes.",
+          ],
+          conclusion:
+            "Estas habilidades se trasladaron naturalmente al desarrollo web: hoy aplico la misma mentalidad analítica y precisión técnica al escribir código, diseñar arquitecturas y optimizar sistemas digitales.",
+        },
+      },
       certifications: {
         title: "Certificaciones",
         description:
@@ -75,6 +122,8 @@ export const translations = {
         viewCredential: "Ver credencial",
       },
       values: {
+        title: "Mis valores",
+        description: "Valores que me guían en mi trabajo y en mi vida personal",
         focus: {
           title: "Mi enfoque",
           description:
@@ -220,6 +269,53 @@ export const translations = {
         title: "My Philosophy",
         text: "I believe the best software is one that solves real problems efficiently. I prioritize code clarity, performance optimization, and accessibility, always with the end user in mind.",
       },
+      experience: {
+        title: "Experience",
+        description: "Experience and abilities that I learned in my journey",
+        fullStack: {
+          title: "Full Stack Web Developer",
+          period: "Freelance | 2023 – Present",
+          description:
+            "Since 2023, I've been working independently developing modern websites and web applications for companies and entrepreneurs looking to strengthen their digital presence.",
+          focus:
+            "I focus on creating scalable, fast, and SEO-optimized solutions, applying development best practices and user experience-centered design.",
+          projects: "I've worked on projects such as:",
+          projectsList: [
+            {
+              name: "House & Garden",
+              description:
+                "Development of a complete online store with Next.js, PostgreSQL, and Zustand. Integrated payment gateways with MercadoPago, automatic notifications with Resend, and a modular architecture focused on performance.",
+            },
+            {
+              name: "Modelty Dashboard",
+              description:
+                "Creation of an administrative panel with Next.js, optimized database structure, and intuitive interface design.",
+            },
+            {
+              name: "Hermes Security Solutions (Spain)",
+              description:
+                "Backend development for an AI platform applied to cybersecurity, collaborating on data architecture and integration with machine learning models.",
+            },
+          ],
+          approach:
+            "My approach combines logic, design, and performance, prioritizing scalability and code clarity in every project.",
+        },
+        technician: {
+          title: "⚙️ Industrial Technician Specialized in HP Printers",
+          period: "Digital Market | 2018 – 2022 | Andalusia, Spain",
+          description:
+            "For over four years, I worked as an industrial technician specialized in large-format HP DesignJet and Latex printers, providing technical support, preventive maintenance, and complex problem resolution to corporate clients.",
+          impact:
+            "That experience strengthened my profile as a developer, giving me a solid foundation in:",
+          skills: [
+            "Diagnosis and resolution of complex technical problems.",
+            "Systematic thinking and focus on efficiency.",
+            "Technical communication with clients and work in demanding environments.",
+          ],
+          conclusion:
+            "These skills naturally transferred to web development: today I apply the same analytical mindset and technical precision to writing code, designing architectures, and optimizing digital systems.",
+        },
+      },
       certifications: {
         title: "Certifications",
         description:
@@ -228,6 +324,8 @@ export const translations = {
         viewCredential: "View credential",
       },
       values: {
+        title: "My values",
+        description: "Values that guide my work and my personal life",
         focus: {
           title: "My focus",
           description: "Constantly growing, learning, and improving my skills.",
