@@ -1,14 +1,14 @@
 export const projects = [
   {
     id: 1,
-    title: "Proyecto E-commerce",
+    title: "Landing page Cabalgatas Córdoba",
     description:
-      "Plataforma de comercio electrónico completa con sistema de pagos, gestión de inventario y panel de administración.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "Mercado Pago"],
-    image: "/house-and-garden.png",
-    projectUrl: "https://houseandgarden.com.ar/",
+      "Página web para emprendimiento familiar en las sierras de Córdoba.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS"],
+    image: "/Cabalgatas.png",
+    projectUrl: "https://la-pampa-redonda.vercel.app/",
     codeUrl: null as string | null,
-    is_active: true,
+    is_active: false,
   },
   {
     id: 2,
@@ -55,13 +55,14 @@ export const projects = [
   },
   {
     id: 6,
-    title: "Plataforma eLearning",
+    title: "Proyecto E-commerce",
     description:
-      "Sistema de eLearning con autenticación, gestión de usuarios y contenido para empresa española.",
-    tech: ["Next.js", "TypeScript", "PostgreSQL", "TailwindCSS"],
-    image: "/digital-market.png",
-    projectUrl: "https://dm-plataforma.vercel.app/",
+      "Plataforma de comercio electrónico completa con sistema de pagos, gestión de inventario y panel de administración.",
+    tech: ["Next.js", "TypeScript", "PostgreSQL", "Mercado Pago"],
+    image: "/house-and-garden.png",
+    projectUrl: "https://houseandgarden.com.ar/",
     codeUrl: null as string | null,
-    is_active: false,
+    is_active: true,
   },
+  
 ];
