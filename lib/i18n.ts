@@ -42,6 +42,18 @@ export const translations = {
             "Priorizo la experiencia del usuario en cada decisión de diseño y desarrollo.",
         },
       },
+      guestbook: {
+        title: "Libro de Visitas",
+        subtitle:
+          "¡Deja tu huella! Comparte un mensaje, feedback o simplemente saluda.",
+        viewAll: "Ver Todos los Mensajes",
+        dummyDates: {
+          twoDaysAgo: "hace 2 días",
+          fiveDaysAgo: "hace 5 días",
+          oneWeekAgo: "hace 1 semana",
+          twoWeeksAgo: "hace 2 semanas",
+        },
+      },
     },
     projects: {
       title: "Proyectos",
@@ -244,6 +256,17 @@ export const translations = {
           title: "UX Focused",
           description:
             "I prioritize user experience in every design and development decision.",
+        },
+      },
+      guestbook: {
+        title: "Guestbook",
+        subtitle: "Leave your mark! Share a message, feedback, or just say hi.",
+        viewAll: "View All Messages",
+        dummyDates: {
+          twoDaysAgo: "2 days ago",
+          fiveDaysAgo: "5 days ago",
+          oneWeekAgo: "1 week ago",
+          twoWeeksAgo: "2 weeks ago",
         },
       },
     },
