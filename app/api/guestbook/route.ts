@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
 const BACKEND_URL =
-  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3001";
+  process.env.NEXT_PUBLIC_BACKEND_URL || "http://localhost:3000";
 
 /**
  * GET /api/guestbook
@@ -55,10 +55,10 @@ export async function GET(request: NextRequest) {
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, message } = body;
+    const { name, content } = body;
 
     // Validate required fields
-    if (!name || !message) {
+    if (!name || !content) {
       return NextResponse.json(
         { error: "Name and message are required" },
         { status: 400 }
@@ -80,14 +80,14 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    if (message.trim().length < 10) {
+    if (content.trim().length < 10) {
       return NextResponse.json(
         { error: "Message must be at least 10 characters" },
         { status: 400 }
       );
     }
 
-    if (message.trim().length > 500) {
+    if (content.trim().length > 500) {
       return NextResponse.json(
         { error: "Message must not exceed 500 characters" },
         { status: 400 }
@@ -103,7 +103,7 @@ export async function POST(request: NextRequest) {
       },
       body: JSON.stringify({
         name: name.trim(),
-        content: message.trim(),
+        content: content.trim(),
       }),
     });
 
