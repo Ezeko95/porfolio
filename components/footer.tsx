@@ -80,7 +80,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t text-center text-sm text-muted-foreground">
           <p>
-            © {currentYear} Portfolio. {t.footer.copyright}.
+            © {currentYear} Gianluca Cianchi Portfolio. {t.footer.copyright}.
           </p>
         </div>
       </div>
